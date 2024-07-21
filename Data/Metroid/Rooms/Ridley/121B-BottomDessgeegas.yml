@@ -1,0 +1,6 @@
+name: "Bottom Dessgeegas"
+area: Ridley
+scroll: Horizontal
+position: [0x12, 0x1B]
+screens: [0x20, 0x21, 0x21, 0x22]
+sprites: []

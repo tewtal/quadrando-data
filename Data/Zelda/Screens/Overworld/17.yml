@@ -1,0 +1,17 @@
+name: Screen 17
+area: Overworld
+screen: 0x17
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+  
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]

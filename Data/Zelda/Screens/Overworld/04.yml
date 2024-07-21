@@ -1,0 +1,17 @@
+name: Screen 04
+area: Overworld
+screen: 0x04
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Open cave", "Right exit"]

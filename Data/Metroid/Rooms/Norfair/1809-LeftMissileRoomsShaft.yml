@@ -1,0 +1,6 @@
+name: "Left Missile Rooms Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x18, 0x09]
+screens: [0x06, 0x08, 0x0C, 0x0A, 0x06]
+sprites: []    

@@ -1,0 +1,6 @@
+name: "Pre Screw Attack"
+area: Norfair
+scroll: Horizontal
+position: [0x10, 0x10]
+screens: [0x0F, 0x10]
+sprites: []

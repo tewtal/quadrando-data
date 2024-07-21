@@ -1,0 +1,6 @@
+name: "Left Eyes"
+area: Norfair
+scroll: Horizontal
+position: [0x0E, 0x14]
+screens: [0x12, 0x14, 0x13]
+sprites: []

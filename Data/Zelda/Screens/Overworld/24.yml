@@ -1,0 +1,33 @@
+name: Screen 24
+area: Overworld
+screen: 0x24
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+      - ["Left exit", "Down exit"]
+      - ["Up exit", "Down exit"]
+      - ["Open cave", "Left exit"]
+      - ["Armos Knight", "Left exit"]

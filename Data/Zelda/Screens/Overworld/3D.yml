@@ -1,0 +1,23 @@
+name: Screen 3D
+area: Overworld
+screen: 0x3D
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Down exit"]
+    Raft:
+      - ["Up exit", "Down exit"]

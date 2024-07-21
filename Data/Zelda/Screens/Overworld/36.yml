@@ -1,0 +1,17 @@
+name: Screen 36
+area: Overworld
+screen: 0x36
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Open cave", "Right exit"]

@@ -1,0 +1,12 @@
+name: "Kraid's Lair"
+area: Kraid
+scroll: Horizontal
+position: [0x08, 0x1D]
+screens: [0x1D]
+sprites:
+    - name: "Energy Tank"
+      screen: 0x00
+      location: "Kraid's Energy Tank"
+      slot: 0x00    
+      type: Item
+      item: EnergyTank

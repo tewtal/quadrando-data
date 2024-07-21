@@ -1,0 +1,31 @@
+name: "Chozo Room"
+area: Brinstar
+screen: 0x0A
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  exits:
+      - name: "Left tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x07
+
+  locations:
+      - name: "Chozo Orb"
+        type: Item
+        position: [0x07, 0x03]
+
+edges:
+  directed:
+      fixed:
+          - ["Right door", "Chozo Orb"]
+      Missile:
+          - ["Chozo Orb", "Right door"]
+
+  undirected:
+      Morph:
+          - ["Left tunnel", "Chozo Orb"]

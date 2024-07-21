@@ -1,0 +1,23 @@
+name: Screen 10
+area: Overworld
+screen: 0x10
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+  caves:
+    - name: "Push block cave"
+      type: Push
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+    PushBlocks:
+      - ["Push block cave", "Left exit"]

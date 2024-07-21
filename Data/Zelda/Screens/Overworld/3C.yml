@@ -1,0 +1,17 @@
+name: Screen 3C
+area: Overworld
+screen: 0x3C
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Up exit"]

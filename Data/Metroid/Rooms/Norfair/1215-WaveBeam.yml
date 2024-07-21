@@ -1,0 +1,12 @@
+name: "Wave Beam"
+area: Norfair
+scroll: Horizontal
+position: [0x12, 0x15]
+screens: [0x04]
+sprites:
+    - name: "Wave Beam"
+      screen: 0x00
+      location: "Chozo Orb"
+      slot: 0x00
+      type: Item
+      item: WaveBeam

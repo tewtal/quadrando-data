@@ -1,0 +1,12 @@
+name: "Right Lava"
+area: Brinstar
+scroll: Horizontal
+position: [0x17, 0x07]
+screens: [0x0C, 0x0E, 0x1B, 0x0F, 0x0E, 0x0F, 0x0D]
+sprites:
+    - name: "Energy Tank"
+      screen: 0x02
+      location: "Energy Tank Pedestal"
+      slot: 0x00    
+      type: Item
+      item: EnergyTank

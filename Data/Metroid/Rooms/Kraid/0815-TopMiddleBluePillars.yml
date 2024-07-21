@@ -1,0 +1,12 @@
+name: "Top Middle Blue Pillars"
+area: Kraid
+scroll: Horizontal
+position: [0x08, 0x15]
+screens: [0x13, 0x10, 0x18]
+sprites:
+    - name: "Missile"
+      screen: 0x01
+      location: "Middle Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

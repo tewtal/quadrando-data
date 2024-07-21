@@ -1,0 +1,25 @@
+name: "Kraid Elevator"
+area: Brinstar
+screen: 0x1C
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Elevator"
+        type: Elevator
+        direction: Down
+  
+  locations:
+      - name: "Elevator Platform"
+        type: Elevator
+        position: [0x07, 0x08]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Elevator Platform"]
+          - ["Elevator Platform", "Elevator"]

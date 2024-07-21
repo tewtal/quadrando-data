@@ -1,0 +1,24 @@
+name: "Left Door Platform Shaft"
+area: Kraid
+screen: 0x0C
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+          - ["Left door", "Bottom"]

@@ -1,0 +1,23 @@
+name: Screen 2F
+area: Overworld
+screen: 0x2F
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Up exit"]
+      - ["Right exit", "Down exit"]
+      - ["Up exit", "Down exit"]

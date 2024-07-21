@@ -1,0 +1,28 @@
+name: "Breakable Top Shaft"
+area: Brinstar
+screen: 0x1E
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right door"]
+  directed:
+      fixed:
+          - ["Left door", "Top"]
+      UseBombs:
+          - ["Top", "Left door"]

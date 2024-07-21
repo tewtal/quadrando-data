@@ -1,0 +1,16 @@
+name: ⏱️Test
+description: Test app
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check for updated Tests
+      shell: bash
+      run: |
+        echo "#TODO: Check for new tests in master/tests branches against local version"
+    - name: Test
+      shell: bash
+      run: |
+        python -m tests.asserts.validate
+        python ./resources/ci/common/keywords.py
+        python -m tests.asserts.keywords

@@ -1,0 +1,12 @@
+name: "Elevator Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x16, 0x0C]
+screens: [0x01, 0x02, 0x03]
+sprites:
+    - name: "Norfair to Brinstar Elevator"
+      screen: 0x00
+      location: "Elevator Platform"  
+      slot: 0x00    
+      type: Elevator
+      item: NorfairToBrinstar

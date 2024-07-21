@@ -1,0 +1,28 @@
+name: "Morph Pillars"
+area: Kraid
+screen: 0x12
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Between Pillars"
+        type: Item
+        position: [0x06, 0x06]
+
+edges:
+  directed:
+      fixed:
+          - ["Right", "Between Pillars"]
+      Morph:
+          - ["Left", "Right"]
+          - ["Left", "Between Pillars"]
+      UseBombs:
+          - ["Right", "Left"]

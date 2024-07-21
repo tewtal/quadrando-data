@@ -1,0 +1,6 @@
+name: "Pre Wave Beam"
+area: Norfair
+scroll: Horizontal
+position: [0x13, 0x15]
+screens: [0x0F, 0x10]
+sprites: []

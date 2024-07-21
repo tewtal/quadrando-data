@@ -1,0 +1,18 @@
+name: "Elevator Shaft"
+area: Norfair
+screen: 0x01
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Elevator
+        direction: Up
+
+      - name: "Bottom"
+        type: Elevator
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]

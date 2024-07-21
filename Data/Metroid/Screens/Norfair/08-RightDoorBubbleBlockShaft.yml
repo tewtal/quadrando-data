@@ -1,0 +1,24 @@
+name: "Right Door Bubble Block Shaft"
+area: Norfair
+screen: 0x08
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+          - ["Right door", "Bottom"]

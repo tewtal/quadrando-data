@@ -1,0 +1,18 @@
+name: "Horizontal Shaft"
+area: Norfair
+screen: 0x00
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right door"]

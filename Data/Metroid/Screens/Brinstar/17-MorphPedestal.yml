@@ -1,0 +1,35 @@
+name: "Morph Pedestal"
+area: Brinstar
+screen: 0x17
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x02
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Morph Ball Pedestal"
+        type: Item
+        position: [0x06, 0x09]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Morph Ball Pedestal"]
+      Morph:
+          - ["Morph Ball Pedestal", "Right Tunnel"]
+  directed:
+      fixed:
+          - ["Right", "Morph Ball Pedestal"]
+      HiJump:
+          - ["Morph Ball Pedestal", "Right"]

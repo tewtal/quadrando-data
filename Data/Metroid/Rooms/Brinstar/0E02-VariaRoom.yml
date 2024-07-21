@@ -1,0 +1,12 @@
+name: "Varia Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x0E, 0x02]
+screens: [0x08, 0x0A]
+sprites:
+    - name: "Varia Suit"
+      screen: 0x01
+      location: "Chozo Orb"  
+      slot: 0x00    
+      type: Item
+      item: Varia

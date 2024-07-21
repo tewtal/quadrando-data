@@ -1,0 +1,71 @@
+#
+# A special screen defintion that we'll always hook up to the Start node
+# that provides flags and tech depending on what items we have.
+#
+
+name: "Meta"
+area: Meta
+screen: 0x00
+scroll: Horizontal
+nodes:
+  locations:
+      - name: "Meta"
+        type: Meta
+
+      - name: "Use Morph"
+        type: Meta
+
+      - name: "Use Bombs"
+        type: Meta
+        item: UseBombs
+
+      - name: "Can IBJ"
+        type: Meta
+        item: CanIBJ
+
+      - name: "Defeat Ridley"
+        type: Meta
+        item: DefeatRidley
+
+      - name: "Defeat Kraid"
+        type: Meta
+        item: DefeatKraid
+
+      - name: "Defeat Mother Brain"
+        type: Meta
+        item: DefeatMotherBrain
+
+      - name: "Defeated Kraid"
+        type: Meta
+
+      - name: "Defeated Ridley"
+        type: Meta
+
+      - name: "Defeated Silver Two"
+        type: Meta
+        item: DefeatedSilverTwo
+
+edges:
+  directed:
+      Morph:
+          - ["Meta", "Use Morph"]
+      
+      Bombs:
+          - ["Use Morph", "Use Bombs"]
+      
+      AllowIBJ:
+          - ["Use Bombs", "Can IBJ"]
+
+      Missile|10:
+          - ["Meta", "Defeat Kraid"]
+      
+      Missile|20:
+          - ["Meta", "Defeat Ridley"]    
+          - ["Meta", "Defeat Mother Brain"]
+
+      KraidDefeated:
+          - ["Defeat Kraid", "Defeated Kraid"]
+
+      RidleyDefeated:
+          - ["Defeat Ridley", "Defeated Ridley"]
+          - ["Defeated Kraid", "Defeated Silver Two"]

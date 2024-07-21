@@ -1,0 +1,18 @@
+name: "Map E7"
+area: Underworld
+map: 0xE7
+screen: 0x3E
+palettes: [0x00, 0x00]
+doors: [0x01, 0x04, 0x00, 0x01] # [north, south, west, east]
+passage: true
+passage_left: 0x30
+passage_right: 0x04
+enemies: 0x03
+enemy_id: 0x06
+enemy_mode: 0x00
+push_block: false
+dark_room: false
+boss_sfx: 0x00
+room_item: 0x03
+item_pos: 0x00
+behaviour: 0x00

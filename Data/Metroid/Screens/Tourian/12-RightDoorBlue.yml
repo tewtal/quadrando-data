@@ -1,0 +1,19 @@
+name: "Right Door Blue"
+area: Tourian
+screen: 0x12
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right door"]

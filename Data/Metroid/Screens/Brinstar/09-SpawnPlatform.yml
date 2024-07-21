@@ -1,0 +1,24 @@
+name: "Spawn Platform"
+area: Brinstar
+screen: 0x09
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Spawn Platform"
+        type: Start
+        position: [0x08, 0x0B]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left", "Spawn Platform"]

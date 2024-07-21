@@ -1,0 +1,21 @@
+name: "Middle Mother Brain"
+area: Tourian
+screen: 0x03
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  directed:
+      fixed:
+          - ["Left", "Right"]
+      Missile|20:
+          - ["Right", "Left"]
+

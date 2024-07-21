@@ -1,0 +1,6 @@
+name: "Middle Eye Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x15, 0x14]
+screens: [0x0D, 0x0B, 0x07]
+sprites: []    

@@ -1,0 +1,24 @@
+name: "Lava Energy Tank Pedestal"
+area: Brinstar
+screen: 0x1B
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Energy Tank Pedestal"
+        type: Item
+        position: [0x07, 0x08]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Energy Tank Pedestal"]
+          - ["Right", "Energy Tank Pedestal"]

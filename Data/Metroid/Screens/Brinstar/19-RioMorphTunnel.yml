@@ -1,0 +1,28 @@
+name: "Rio Morph Tunnel"
+area: Brinstar
+screen: 0x19
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+  
+  locations:
+      - name: "Ceiling Energy Tank"
+        type: Item
+        position: [0x02, 0x01]
+
+edges:
+  undirected:
+      Morph:
+          - ["Left", "Right"]
+  directed:
+      IceBeam:
+          - ["Left", "Ceiling Energy Tank"]
+      CanIBJ:
+          - ["Left", "Ceiling Energy Tank"]

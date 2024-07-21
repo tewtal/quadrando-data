@@ -1,0 +1,28 @@
+name: "Pillars Red"
+area: Norfair
+screen: 0x26
+scroll: Horizontal
+nodes:
+    exits:
+        - name: "Right"
+          type: Tunnel
+          direction: Right
+          height: 0x07
+  
+    locations:
+        - name: "Pillar"
+          type: Item
+          position: [0x02, 0x04]
+        
+        - name: "Block destroyed"
+          type: Meta
+
+edges:
+  undirected:
+      UseBombs:
+          - ["Right", "Pillar"]
+  directed:
+      WaveBeam:
+          - ["Pillar", "Block destroyed"]
+      Morph:
+          - ["Block destroyed", "Right"]

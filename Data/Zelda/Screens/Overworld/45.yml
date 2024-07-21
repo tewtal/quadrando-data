@@ -1,0 +1,29 @@
+name: Screen 45
+area: Overworld
+screen: 0x45
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Push block cave"
+      type: Push
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Up exit"]
+      - ["Right exit", "Down exit"]
+      - ["Up exit", "Down exit"]
+    PushBlocks:
+      - ["Push block cave", "Right exit"]

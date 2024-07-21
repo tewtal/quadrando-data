@@ -1,0 +1,31 @@
+name: "Dessgeega Tunnel"
+area: Ridley
+screen: 0x26
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x01
+
+      - name: "Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x01
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left tunnel", "Right tunnel"]
+      UseBombs:
+          - ["Right", "Left Tunnel"]

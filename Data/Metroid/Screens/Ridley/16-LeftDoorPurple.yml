@@ -1,0 +1,19 @@
+name: "Left Door Purple"
+area: Ridley
+screen: 0x16
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Right", "Left door"]

@@ -1,0 +1,19 @@
+name: "Ridley Energy Tank"
+area: Ridley
+screen: 0x11
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Pillar"
+        type: Item
+        position: [0x06, 0x06]
+
+edges:
+  undirected:
+      fixed:
+          - ["Right", "Pillar"]

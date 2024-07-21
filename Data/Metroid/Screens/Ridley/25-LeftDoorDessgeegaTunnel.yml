@@ -1,0 +1,24 @@
+name: "Left Door Dessgeega Tunnel"
+area: Ridley
+screen: 0x25
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Red
+        direction: Left
+
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+      - name: "Right tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x01
+
+edges:
+  undirected:
+      UseBombs:
+          - ["Right tunnel", "Left door"]

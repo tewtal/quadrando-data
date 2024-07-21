@@ -1,0 +1,17 @@
+name: Screen 38
+area: Overworld
+screen: 0x38
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  meta:
+    - name: "Fairy Fountain"
+      type: Fairy
+      
+edges:
+  undirected:
+    fixed:
+      - ["Fairy Fountain", "Down exit"]

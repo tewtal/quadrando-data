@@ -1,0 +1,28 @@
+name: Screen 72
+area: Overworld
+screen: 0x72
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]
+      - ["Left exit", "Up exit"]
+      - ["Right exit", "Up exit"]
+      - ["Open cave", "Left exit"]

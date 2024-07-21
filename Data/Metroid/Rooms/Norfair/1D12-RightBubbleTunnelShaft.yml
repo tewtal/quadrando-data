@@ -1,0 +1,6 @@
+name: "Right Bubble Tunnel Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x1D, 0x12]
+screens: [0x11, 0x0B, 0x07]
+sprites: []    

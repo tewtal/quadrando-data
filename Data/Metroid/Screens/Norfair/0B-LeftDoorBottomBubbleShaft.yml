@@ -1,0 +1,28 @@
+name: "Left Door Bottom Bubble Shaft"
+area: Norfair
+screen: 0x0B
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom tunnel"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Top"]
+  directed:
+      fixed:
+          - ["Bottom tunnel", "Top"]
+      UseBombs:
+          - ["Top", "Bottom tunnel"]

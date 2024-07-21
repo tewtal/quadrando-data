@@ -1,0 +1,13 @@
+name: "Elevator Shaft"
+area: Kraid
+scroll: Vertical
+position: [0x07, 0x13]
+screens: [0x01, 0x02, 0x03, 0x03, 0x08, 0x04, 0x05, 0x06]
+sprites:
+    - name: "Kraid to Brinstar Elevator"
+      screen: 0x00
+      location: "Elevator Platform"  
+      slot: 0x00    
+      type: Elevator
+      item: KraidToBrinstar
+

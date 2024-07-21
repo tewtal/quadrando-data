@@ -1,0 +1,24 @@
+name: "Grey Item Pillar"
+area: Ridley
+screen: 0x0F
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Pillar"
+        type: Item
+        position: [0x0E, 0x06]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left", "Pillar"]

@@ -1,0 +1,32 @@
+name: "Left Door Bubble Platform Shaft"
+area: Norfair
+screen: 0x0E
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Bottom"]
+  directed:
+      fixed:
+          - ["Top", "Left door"]
+      CanIBJ:
+          - ["Left door", "Top"]
+      IceBeam:
+          - ["Left door", "Top"]
+      HiJump:
+          - ["Left door", "Top"]

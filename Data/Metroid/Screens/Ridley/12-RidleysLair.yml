@@ -1,0 +1,30 @@
+name: "Ridley's Lair"
+area: Ridley
+screen: 0x12
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+      - name: "Left door"
+        type: Purple
+        direction: Left
+
+  locations:
+      - name: "Ridley's Platform"
+        type: Meta
+
+      - name: "Ridley"
+        type: Boss
+        item: RidleyDefeated
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Ridley's Platform"]          
+      UseBombs:
+          - ["Ridley's Platform", "Left door"]    
+      DefeatRidley:
+          - ["Ridley's Platform", "Ridley"]

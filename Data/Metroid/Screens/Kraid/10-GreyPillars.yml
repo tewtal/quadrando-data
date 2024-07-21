@@ -1,0 +1,24 @@
+name: "Grey Pillars"
+area: Kraid
+screen: 0x10
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Middle Pillar"
+        type: Item
+        position: [0x07, 0x04]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left", "Middle Pillar"]

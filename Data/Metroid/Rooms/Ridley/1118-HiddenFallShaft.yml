@@ -1,0 +1,13 @@
+name: "Hidden Fall Shaft"
+area: Ridley
+scroll: Vertical
+position: [0x11, 0x18]
+screens: [0x05, 0x0D, 0x04, 0x03]
+sprites:
+    - name: "Energy Tank"
+      screen: 0x01
+      location: "Left ledge"
+      slot: 0x00    
+      type: Item
+      item: EnergyTank
+

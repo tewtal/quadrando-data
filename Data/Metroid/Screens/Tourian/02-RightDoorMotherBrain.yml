@@ -1,0 +1,21 @@
+name: "Right Door Mother Brain"
+area: Tourian
+screen: 0x02
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+edges:
+  directed:
+      fixed:
+          - ["Left", "Right door"]
+      Missile|20:
+          - ["Right door", "Left"]

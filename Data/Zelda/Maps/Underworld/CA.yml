@@ -1,0 +1,18 @@
+name: "Map CA"
+area: Underworld
+map: 0xCA
+screen: 0x3F
+palettes: [0x02, 0x02]
+doors: [0x00, 0x06, 0x00, 0x06] # [north, south, west, east]
+passage: true
+passage_left: 0x1A
+passage_right: 0x1A
+enemies: 0x01
+enemy_id: 0x29
+enemy_mode: 0x00
+push_block: false
+dark_room: false
+boss_sfx: 0x00
+room_item: 0x07
+item_pos: 0x00
+behaviour: 0x00

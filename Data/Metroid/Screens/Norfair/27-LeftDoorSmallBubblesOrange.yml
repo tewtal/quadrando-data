@@ -1,0 +1,19 @@
+name: "Left Door Small Bubbles Orange"
+area: Norfair
+screen: 0x27
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right"]

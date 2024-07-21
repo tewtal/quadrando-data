@@ -1,0 +1,6 @@
+name: "Solid Wall"
+area: Norfair
+screen: 0x07
+scroll: Horizontal
+nodes:
+edges:

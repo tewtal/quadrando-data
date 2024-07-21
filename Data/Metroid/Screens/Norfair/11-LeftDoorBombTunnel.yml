@@ -1,0 +1,21 @@
+name: "Left Door Bomb Tunnel"
+area: Norfair
+screen: 0x11
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  directed:
+      fixed:
+          - ["Bottom", "Left door"]
+      UseBombs:
+          - ["Left door", "Bottom"]

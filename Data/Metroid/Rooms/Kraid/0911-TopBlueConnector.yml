@@ -1,0 +1,6 @@
+name: "Top Blue Connector"
+area: Kraid
+scroll: Horizontal
+position: [0x09, 0x11]
+screens: [0x17, 0x18]
+sprites: []

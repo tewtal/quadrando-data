@@ -1,0 +1,6 @@
+name: "Ridley's Lair"
+area: Ridley
+scroll: Horizontal
+position: [0x11, 0x1D]
+screens: [0x12]
+sprites: []

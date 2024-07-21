@@ -1,0 +1,18 @@
+name: "Map 81"
+area: Underworld
+map: 0x81
+screen: 0x13
+palettes: [0x03, 0x02]
+doors: [0x01, 0x07, 0x01, 0x05] # [north, south, west, east]
+passage: false
+passage_left: 0x00
+passage_right: 0x00
+enemies: 0x03
+enemy_id: 0x2F
+enemy_mode: 0x01
+push_block: false
+dark_room: true
+boss_sfx: 0x00
+room_item: 0x03
+item_pos: 0x00
+behaviour: 0x00

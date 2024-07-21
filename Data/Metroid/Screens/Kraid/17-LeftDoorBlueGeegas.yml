@@ -1,0 +1,19 @@
+name: "Left Door Blue Geegas"
+area: Kraid
+screen: 0x17
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right"]

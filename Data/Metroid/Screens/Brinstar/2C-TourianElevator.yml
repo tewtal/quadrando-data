@@ -1,0 +1,25 @@
+name: "Tourian Elevator"
+area: Brinstar
+screen: 0x2C
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Elevator"
+        type: Elevator
+        direction: Down
+  
+  locations:
+      - name: "Elevator Platform"
+        type: Elevator
+        position: [0x07, 0x08]
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Elevator Platform"]
+          - ["Elevator Platform", "Elevator"]

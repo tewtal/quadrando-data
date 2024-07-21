@@ -1,0 +1,48 @@
+name: Underworld Screen 19
+area: Underworld
+screen: 0x19
+nodes:
+  exits:
+    - name: "Left edge"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right edge"
+      type: Scroll
+      direction: Right
+      
+    - name: "Top edge"
+      type: Scroll
+      direction: Up
+      
+    - name: "Bottom edge"
+      type: Scroll
+      direction: Down
+      
+  regions:
+    - name: "Top side"
+      type: Region
+      from: [0, 0]
+      to: [11, 0]
+
+    - name: "Middle"
+      type: Region
+      from: [0, 2]
+      to: [11, 4]
+
+    - name: "Bottom side"
+      type: Region
+      from: [0, 0]
+      to: [11, 6]
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left edge", "Middle"]
+      - ["Right edge", "Middle"]
+      - ["Top edge", "Top side"]
+      - ["Bottom edge", "Bottom side"]
+
+    StepLadder:
+      - ["Bottom side", "Middle"]
+      - ["Top side", "Middle"]

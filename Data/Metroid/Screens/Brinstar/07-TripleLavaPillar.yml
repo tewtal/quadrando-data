@@ -1,0 +1,25 @@
+name: "Triple Lava Pillar"
+area: Brinstar
+screen: 0x07
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Middle Pillar"
+        type: Item
+        position: [0x07, 0x06]
+
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left", "Middle Pillar"]

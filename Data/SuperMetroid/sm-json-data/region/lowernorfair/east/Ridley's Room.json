@@ -1,0 +1,279 @@
+{
+  "$schema": "../../../schema/m3-room.schema.json",
+  "id": 142,
+  "name": "Ridley's Room",
+  "area": "Norfair",
+  "subarea": "Lower",
+  "subsubarea": "East",
+  "playable": true,
+  "roomAddress": "0x7B32E",
+  "roomEnvironments": [{"heated": true}],
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Left Door",
+      "nodeType": "door",
+      "nodeSubType": "gray",
+      "nodeAddress": "0x00198b2",
+      "doorOrientation": "left",
+      "doorEnvironments": [{"physics": "air"}],
+      "locks": [
+        {
+          "name": "Ridley Room Left Gray Lock (to E-Tank)",
+          "lockType": "gameFlag",
+          "unlockStrats": [
+            {
+              "name": "Base",
+              "notable": false,
+              "requires": [
+                "f_DefeatedRidley"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Right Door",
+      "nodeType": "door",
+      "nodeSubType": "gray",
+      "nodeAddress": "0x00198be",
+      "doorOrientation": "right",
+      "doorEnvironments": [{"physics": "air"}],
+      "locks": [
+        {
+          "name": "Ridley Room Right Gray Lock (to Farming Room)",
+          "lockType": "gameFlag",
+          "unlockStrats": [
+            {
+              "name": "Base",
+              "notable": false,
+              "requires": [
+                "f_DefeatedRidley"
+              ]
+            }
+          ]
+        }
+      ],
+      "spawnAt": 4
+    },
+    {
+      "id": 3,
+      "name": "Ridley",
+      "nodeType": "event",
+      "nodeSubType": "boss",
+      "locks": [
+        {
+          "name": "Ridley Fight",
+          "lockType": "bossFight",
+          "unlockStrats": [
+            {
+              "name": "Heat Proof Ridley",
+              "notable": false,
+              "requires": [
+                "h_heatProof",
+                {"enemyKill": {
+                  "enemies": [["Ridley"]]
+                }}
+              ]
+            },
+            {
+              "name": "Ridley without Heat Protection",
+              "notable": true,
+              "requires": [
+                "canHeatRun",
+                {"enemyKill": {
+                  "enemies": [["Ridley"]]
+                }}
+              ],
+              "note": "Fight Ridley without immunity to heat damage."
+            }
+          ]
+        }
+      ],
+      "yields": ["f_DefeatedRidley"]
+    },
+    {
+      "id": 4,
+      "name": "Right Door Spawn At Junction",
+      "nodeType": "junction",
+      "nodeSubType": "junction",
+      "spawnAt": 4
+    }
+  ],
+  "enemies": [
+    {
+      "id": "e1",
+      "groupName": "Ridley",
+      "enemyName": "Ridley",
+      "quantity": 1,
+      "homeNodes": [3],
+      "stopSpawn": ["f_DefeatedRidley"]
+    }
+  ],
+  "links": [
+    {
+      "from": 1,
+      "to": [
+        {"id": 1},
+        {"id": 3}
+      ]
+    },
+    {
+      "from": 2,
+      "to": [
+        {"id": 2},
+        {"id": 3}
+      ]
+    },
+    {
+      "from": 3,
+      "to": [
+        {"id": 1},
+        {"id": 2},
+        {"id": 3}
+      ]
+    },
+    {
+      "from": 4,
+      "to": [
+        {"id": 2},
+        {"id": 3}
+      ]
+    }
+  ],
+  "strats": [
+    {
+      "link": [1, 1],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 1,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [1, 1],
+      "name": "G-Mode Regain Mobility",
+      "requires": [
+        {"not": "f_DefeatedRidley"},
+        "canRiskPermanentLossOfAccess",
+        {"enemyDamage": {
+          "enemy": "Ridley",
+          "type": "contact",
+          "hits": 1
+        }}
+      ],
+      "gModeRegainMobility": {},
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 3],
+      "name": "Base",
+      "requires": [
+        {"heatFrames": 50}
+      ]
+    },
+    {
+      "link": [2, 2],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 1,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [2, 2],
+      "name": "G-Mode Regain Mobility",
+      "requires": [
+        {"not": "f_DefeatedRidley"},
+        "canRiskPermanentLossOfAccess",
+        {"enemyDamage": {
+          "enemy": "Ridley",
+          "type": "contact",
+          "hits": 1
+        }}
+      ],
+      "gModeRegainMobility": {},
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 3],
+      "name": "Base",
+      "requires": [
+        {"heatFrames": 100}
+      ]
+    },
+    {
+      "link": [3, 1],
+      "name": "Base",
+      "requires": [
+        {"heatFrames": 50}
+      ]
+    },
+    {
+      "link": [3, 2],
+      "name": "Wall Jump",
+      "requires": [
+        "canWalljump",
+        {"heatFrames": 200}
+      ]
+    },
+    {
+      "link": [3, 2],
+      "name": "Space Jump",
+      "requires": [
+        "SpaceJump",
+        {"heatFrames": 250}
+      ]
+    },
+    {
+      "link": [3, 2],
+      "name": "IBJ",
+      "requires": [
+        "h_heatProof",
+        "canIBJ"
+      ]
+    },
+    {
+      "link": [3, 3],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canHeatedCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [4, 2],
+      "name": "Prepared Entry",
+      "requires": [
+        "canPrepareForNextRoom",
+        {"or": [
+          "SpaceJump",
+          "canWalljump",
+          "canTrickyJump",
+          "canStationarySpinJump"
+        ]},
+        {"heatFrames": 80},
+        {"doorUnlockedAtNode": 2}
+      ],
+      "unlocksDoors": [
+        {"types": ["super"], "requires": []},
+        {"types": ["missiles", "powerbomb"], "requires": ["never"]}
+      ]
+    },
+    {
+      "link": [4, 3],
+      "name": "Base",
+      "requires": [
+        {"heatFrames": 100}
+      ]
+    }
+  ]
+}

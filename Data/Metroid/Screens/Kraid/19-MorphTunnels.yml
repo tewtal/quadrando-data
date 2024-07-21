@@ -1,0 +1,31 @@
+name: "Morph Tunnels"
+area: Kraid
+screen: 0x19
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Top Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x04
+
+      - name: "Bottom Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x02
+
+      - name: "Top Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x04
+
+      - name: "Bottom Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x02     
+
+edges:
+  undirected:
+      UseBombs:
+          - ["Bottom Left Tunnel", "Bottom Right Tunnel"]
+          - ["Top Left Tunnel", "Top Right Tunnel"]

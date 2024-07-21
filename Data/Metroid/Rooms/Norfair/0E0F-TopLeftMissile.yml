@@ -1,0 +1,12 @@
+name: "Top Left Missile"
+area: Norfair
+scroll: Horizontal
+position: [0x0E, 0x0F]
+screens: [0x1D, 0x1F, 0x1E, 0x19, 0x07]
+sprites:
+    - name: "Missile"
+      screen: 0x03
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

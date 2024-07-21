@@ -1,0 +1,12 @@
+name: "Kraid Elevator Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x07, 0x12]
+screens: [0x1C]
+sprites:
+    - name: "Brinstar to Kraid Elevator"
+      screen: 0x00
+      location: "Elevator Platform"
+      slot: 0x00    
+      type: Elevator
+      item: BrinstarToKraid

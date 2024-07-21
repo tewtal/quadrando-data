@@ -1,0 +1,22 @@
+name: Screen 0A
+area: Overworld
+screen: 0x0A
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Open cave", "Down exit"]
+      - ["Down exit", "Armos Knight"]

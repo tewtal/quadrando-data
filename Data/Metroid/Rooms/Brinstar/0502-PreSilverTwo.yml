@@ -1,0 +1,6 @@
+name: "Pre Silver Two"
+area: Brinstar
+scroll: Horizontal
+position: [0x05, 0x02]
+screens: [0x27, 0x15, 0x15, 0x16, 0x14, 0x13]
+sprites: []

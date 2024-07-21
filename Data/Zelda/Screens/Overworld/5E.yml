@@ -1,0 +1,36 @@
+name: Screen 5E
+area: Overworld
+screen: 0x5E
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Tree cave"
+      type: Tree
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]
+      - ["Left exit", "Up exit"]
+      - ["Left exit", "Down exit"]
+      - ["Right exit", "Up exit"]
+      - ["Right exit", "Down exit"]
+      - ["Up exit", "Down exit"]
+    BurnTrees:
+      - ["Tree cave", "Left exit"]

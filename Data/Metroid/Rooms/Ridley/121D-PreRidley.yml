@@ -1,0 +1,6 @@
+name: "Pre Ridley"
+area: Ridley
+scroll: Horizontal
+position: [0x12, 0x1D]
+screens: [0x13, 0x14, 0x14, 0x15]
+sprites: []

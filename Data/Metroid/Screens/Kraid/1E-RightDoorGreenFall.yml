@@ -1,0 +1,19 @@
+name: "Right Door Green Fall"
+area: Kraid
+screen: 0x1E
+scroll: Vertical
+nodes:
+  exits:
+        - name: "Top"
+          type: Scroll
+          direction: Up
+
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+edges:
+  directed:
+      fixed:
+          - ["Top", "Right door"]

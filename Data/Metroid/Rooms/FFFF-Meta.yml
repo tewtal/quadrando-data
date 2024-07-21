@@ -1,0 +1,5 @@
+name: "Metroid Meta Locations"
+area: Meta
+scroll: Horizontal
+position: [0xFF, 0xFF]
+screens: [0x00]

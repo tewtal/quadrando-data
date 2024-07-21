@@ -1,0 +1,22 @@
+name: Screen 3B
+area: Overworld
+screen: 0x3B
+nodes:
+  exits:
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Up exit", "Down exit"]
+      - ["Armos Knight", "Up exit"]

@@ -1,0 +1,6 @@
+name: "Solid Wall"
+area: Ridley
+screen: 0x05
+scroll: Horizontal
+nodes:
+edges:

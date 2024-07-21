@@ -1,0 +1,6 @@
+name: "Left Multiviolas"
+area: Ridley
+scroll: Horizontal
+position: [0x0F, 0x1B]
+screens: [0x1C, 0x1D]
+sprites: []

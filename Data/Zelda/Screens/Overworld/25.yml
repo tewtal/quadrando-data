@@ -1,0 +1,23 @@
+name: Screen 25
+area: Overworld
+screen: 0x25
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Bomb cave"
+      type: Bomb
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Down exit"]
+    UseBombs:
+      - ["Bomb cave", "Right exit"]

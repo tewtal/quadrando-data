@@ -1,0 +1,6 @@
+name: "Top Left Red Connector"
+area: Norfair
+scroll: Horizontal
+position: [0x0E, 0x11]
+screens: [0x21, 0x25, 0x25, 0x22]
+sprites: []

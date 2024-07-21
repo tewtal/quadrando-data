@@ -1,0 +1,19 @@
+name: "Left Door Red"
+area: Norfair
+screen: 0x21
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right"]

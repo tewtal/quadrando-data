@@ -1,0 +1,12 @@
+name: "Bomb Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x18, 0x05]
+screens: [0x08, 0x0A]
+sprites:
+    - name: "Bomb"
+      screen: 0x01
+      location: "Chozo Orb"  
+      slot: 0x00    
+      type: Item
+      item: Bomb

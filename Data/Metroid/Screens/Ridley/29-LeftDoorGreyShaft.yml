@@ -1,0 +1,26 @@
+name: "Left Door Platform Shaft"
+area: Ridley
+screen: 0x29
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  directed:
+      fixed:
+          - ["Top", "Bottom"]
+          - ["Top", "Left door"]
+      HiJump:
+          - ["Bottom", "Left door"]

@@ -1,0 +1,19 @@
+name: "Left Door Fake Kraid"
+area: Kraid
+screen: 0x1F
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right"]

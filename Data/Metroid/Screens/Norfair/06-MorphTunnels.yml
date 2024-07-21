@@ -1,0 +1,31 @@
+name: "Morph Tunnels"
+area: Norfair
+screen: 0x06
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Top Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x0B
+
+      - name: "Bottom Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x06
+
+      - name: "Top Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x0B
+
+      - name: "Bottom Right Tunnel"
+        type: Tunnel
+        direction: Right
+        height: 0x06
+
+edges:
+  undirected:
+      UseBombs:
+          - ["Bottom Left Tunnel", "Bottom Right Tunnel"]
+          - ["Top Left Tunnel", "Top Right Tunnel"]

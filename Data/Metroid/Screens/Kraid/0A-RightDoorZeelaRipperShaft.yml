@@ -1,0 +1,30 @@
+name: "Right Door Zeela Ripper Shaft"
+area: Kraid
+screen: 0x0A
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Bottom"]
+  directed:
+      fixed:
+          - ["Top", "Bottom"]
+      CanIBJ:
+          - ["Right door", "Top"]
+      IceBeam:
+          - ["Right door", "Top"]

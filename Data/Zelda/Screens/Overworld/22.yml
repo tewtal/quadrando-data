@@ -1,0 +1,28 @@
+name: Screen 22
+area: Overworld
+screen: 0x22
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down left exit"
+      type: Scroll
+      direction: Down
+
+    - name: "Down right exit"
+      type: Scroll
+      direction: Down
+
+  caves:
+    - name: "Push block cave"
+      type: Push
+      
+
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Down right exit"]
+    PushBlocks:
+      - ["Push block cave", "Down left exit"]

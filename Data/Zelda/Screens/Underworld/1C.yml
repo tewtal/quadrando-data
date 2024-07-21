@@ -1,0 +1,46 @@
+name: Underworld Screen 1C
+area: Underworld
+screen: 0x1C
+nodes:
+  exits:
+    - name: "Left edge"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right edge"
+      type: Scroll
+      direction: Right
+      
+    - name: "Top edge"
+      type: Scroll
+      direction: Up
+      
+    - name: "Bottom edge"
+      type: Scroll
+      direction: Down
+
+  regions:
+    - name: "Middle"
+      type: Region
+      from: [0, 0]
+      to: [11, 6]
+      
+  meta:
+    - name: "Push block"
+      type: Push
+      
+    - name: "Stairs"
+      type: Stairs
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left edge", "Right edge"]
+      - ["Left edge", "Top edge"]
+      - ["Left edge", "Bottom edge"]
+      - ["Right edge", "Top edge"]
+      - ["Right edge", "Bottom edge"]
+      - ["Top edge", "Bottom edge"]
+      - ["Left edge", "Middle"]
+      - ["Left edge", "Push block"]
+      - ["Left edge", "Stairs"]

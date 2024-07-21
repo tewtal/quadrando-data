@@ -1,0 +1,32 @@
+name: Screen 58
+area: Overworld
+screen: 0x58
+nodes:
+  exits:
+    - name: "Left top exit"
+      type: Scroll
+      direction: Left
+
+    - name: "Left bottom exit"
+      type: Scroll
+      direction: Left
+
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down right exit"
+      type: Scroll
+      direction: Down
+
+    - name: "Down left exit"
+      type: Scroll
+      direction: Down
+
+edges:
+  undirected:
+    fixed:
+      - ["Left top exit", "Right exit"]
+      - ["Left top exit", "Down right exit"]
+      - ["Right exit", "Down right exit"]
+      - ["Left bottom exit", "Down left exit"]

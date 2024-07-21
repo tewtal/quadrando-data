@@ -1,0 +1,12 @@
+name: "Long Beam Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x06, 0x05]
+screens: [0x08, 0x0A]
+sprites:
+    - name: "Long Beam"
+      screen: 0x01
+      location: "Chozo Orb"  
+      slot: 0x00    
+      type: Item
+      item: LongBeam

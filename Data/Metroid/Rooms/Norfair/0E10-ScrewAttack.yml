@@ -1,0 +1,12 @@
+name: "Screw Attack"
+area: Norfair
+scroll: Horizontal
+position: [0x0E, 0x10]
+screens: [0x07, 0x04]
+sprites:
+    - name: "Screw Attack"
+      screen: 0x01
+      location: "Chozo Orb"
+      slot: 0x00
+      type: Item
+      item: ScrewAttack

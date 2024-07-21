@@ -1,0 +1,31 @@
+name: "Chozo Room"
+area: Norfair
+screen: 0x04
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  exits:
+      - name: "Left tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x06
+
+  locations:
+      - name: "Chozo Orb"
+        type: Item
+        position: [0x07, 0x03]
+
+edges:
+  directed:
+      fixed:
+          - ["Right door", "Chozo Orb"]
+      Missile:
+          - ["Chozo Orb", "Right door"]
+
+  undirected:
+      UseBombs:
+          - ["Left tunnel", "Chozo Orb"]

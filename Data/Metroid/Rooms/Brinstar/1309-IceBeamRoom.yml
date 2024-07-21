@@ -1,0 +1,12 @@
+name: "Ice Beam Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x13, 0x09]
+screens: [0x0A]
+sprites:
+    - name: "Ice Beam"
+      screen: 0x00
+      location: "Chozo Orb"  
+      slot: 0x00    
+      type: Item
+      item: IceBeam

@@ -1,0 +1,28 @@
+name: Screen 32
+area: Overworld
+screen: 0x32
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+
+  caves:
+    - name: "Bomb cave"
+      type: Bomb    
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+      - ["Armos Knight", "Left exit"]
+    UseBombs:
+      - ["Bomb cave", "Left exit"]

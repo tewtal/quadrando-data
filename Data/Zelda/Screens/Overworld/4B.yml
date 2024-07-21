@@ -1,0 +1,23 @@
+name: Screen 4B
+area: Overworld
+screen: 0x4B
+nodes:
+  exits:
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  meta:
+    - name: "Overworld Item"
+      type: Item
+      
+edges:
+  undirected:
+    fixed:
+      - ["Up exit", "Down exit"]
+    StepLadder:
+      - ["Overworld Item", "Up exit"]

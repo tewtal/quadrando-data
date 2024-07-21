@@ -1,0 +1,19 @@
+name: "Right Door Post Ridley"
+area: Ridley
+screen: 0x10
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Purple
+        direction: Right
+
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right door"]

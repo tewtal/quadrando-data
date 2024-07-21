@@ -1,0 +1,51 @@
+name: Underworld Screen 12
+area: Underworld
+screen: 0x12
+nodes:
+  exits:
+    - name: "Left edge"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right edge"
+      type: Scroll
+      direction: Right
+      
+    - name: "Top edge"
+      type: Scroll
+      direction: Up
+      
+    - name: "Bottom edge"
+      type: Scroll
+      direction: Down
+
+  regions:
+    - name: "Left strip"
+      type: Region
+      from: [0, 0]
+      to: [0, 6]
+
+    - name: "Top strip"
+      type: Region
+      from: [1, 0]
+      to: [10, 0]
+
+    - name: "Right strip"
+      type: Region
+      from: [11, 0]
+      to: [11, 6]
+
+    - name: "Middle T"
+      type: Region
+      from: [3, 3]
+      to: [8, 6]    
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left edge" , "Left strip"]
+      - ["Top edge", "Top strip"]
+      - ["Right edge", "Right strip"]
+      - ["Bottom edge", "Middle T"]
+      - ["Right strip", "Top strip"]
+      - ["Left strip", "Top strip"]

@@ -1,0 +1,17 @@
+name: Screen 33
+area: Overworld
+screen: 0x33
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Armos Knight", "Down exit"]

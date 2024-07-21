@@ -1,0 +1,18 @@
+name: Screen 08
+area: Overworld
+screen: 0x08
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+  caves:
+    - name: "Push block cave"
+      type: Push
+      
+edges:
+  undirected:
+    fixed:
+    PushBlocks:
+      - ["Push block cave", "Left exit"]

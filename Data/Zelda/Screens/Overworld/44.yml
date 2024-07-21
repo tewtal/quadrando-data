@@ -1,0 +1,29 @@
+name: Screen 44
+area: Overworld
+screen: 0x44
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Tree cave"
+      type: Tree
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+      - ["Left exit", "Down exit"]
+      - ["Up exit", "Down exit"]
+    BurnTrees:
+      - ["Tree cave", "Left exit"]

@@ -1,0 +1,12 @@
+name: "Ice Beam"
+area: Norfair
+scroll: Horizontal
+position: [0x19, 0x0C]
+screens: [0x1B, 0x04, 0x0F, 0x06, 0x2A]
+sprites:
+    - name: "Ice Beam"
+      screen: 0x01
+      location: "Chozo Orb"
+      slot: 0x00
+      type: Item
+      item: IceBeam

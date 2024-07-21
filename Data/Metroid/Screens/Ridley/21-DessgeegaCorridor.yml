@@ -1,0 +1,18 @@
+name: "Dessgeega Corridor"
+area: Ridley
+screen: 0x21
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]

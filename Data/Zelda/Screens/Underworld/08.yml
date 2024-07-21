@@ -1,0 +1,42 @@
+name: Underworld Screen 08
+area: Underworld
+screen: 0x08
+nodes:
+  exits:
+    - name: "Left edge"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right edge"
+      type: Scroll
+      direction: Right
+      
+    - name: "Top edge"
+      type: Scroll
+      direction: Up
+      
+    - name: "Bottom edge"
+      type: Scroll
+      direction: Down
+
+  regions:
+    - name: "Middle"
+      type: Region
+      from: [0, 0]
+      to: [11, 6]
+      
+  meta:
+    - name: "Push block"
+      type: Push
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left edge", "Right edge"]
+      - ["Left edge", "Top edge"]
+      - ["Left edge", "Bottom edge"]
+      - ["Right edge", "Top edge"]
+      - ["Right edge", "Bottom edge"]
+      - ["Top edge", "Bottom edge"]
+      - ["Left edge", "Middle"]
+      - ["Left edge", "Push block"]

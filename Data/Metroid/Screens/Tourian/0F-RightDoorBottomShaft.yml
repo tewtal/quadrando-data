@@ -1,0 +1,19 @@
+name: "Right Door Bottom Shaft"
+area: Tourian
+screen: 0x0F
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+  doors:
+      - name: "Right door"
+        type: Orange
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Top"]

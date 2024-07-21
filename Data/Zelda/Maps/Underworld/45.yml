@@ -1,0 +1,18 @@
+name: "Map 45"
+area: Underworld
+map: 0x45
+screen: 0x0D
+palettes: [0x02, 0x02]
+doors: [0x05, 0x01, 0x00, 0x01] # [north, south, west, east]
+passage: false
+passage_left: 0x00
+passage_right: 0x00
+enemies: 0x03
+enemy_id: 0x27
+enemy_mode: 0x00
+push_block: false
+dark_room: false
+boss_sfx: 0x01
+room_item: 0x19
+item_pos: 0x01
+behaviour: 0x00

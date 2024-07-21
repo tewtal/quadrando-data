@@ -1,0 +1,12 @@
+name: "Ridley's Energy Tank"
+area: Ridley
+scroll: Horizontal
+position: [0x0F, 0x1D]
+screens: [0x11, 0x10]
+sprites:
+    - name: "Energy Tank"
+      screen: 0x00
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: EnergyTank

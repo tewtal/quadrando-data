@@ -1,0 +1,19 @@
+name: "Right Door Frog Red"
+area: Norfair
+screen: 0x20
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Left"]

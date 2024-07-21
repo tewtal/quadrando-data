@@ -1,0 +1,6 @@
+name: "Pre Varia"
+area: Brinstar
+scroll: Horizontal
+position: [0x10, 0x02]
+screens: [0x1A, 0x29, 0x29, 0x28]
+sprites: []

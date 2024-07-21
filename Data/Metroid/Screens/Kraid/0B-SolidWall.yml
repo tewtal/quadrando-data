@@ -1,0 +1,6 @@
+name: "Solid Wall"
+area: Kraid
+screen: 0x0B
+scroll: Horizontal
+nodes:
+edges:

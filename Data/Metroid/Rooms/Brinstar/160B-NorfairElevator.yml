@@ -1,0 +1,12 @@
+name: "Norfair Elevator Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x16, 0x0B]
+screens: [0x0B]
+sprites:
+    - name: "Brinstar to Norfair Elevator"
+      screen: 0x00
+      location: "Elevator Platform"  
+      slot: 0x00    
+      type: Elevator
+      item: BrinstarToNorfair

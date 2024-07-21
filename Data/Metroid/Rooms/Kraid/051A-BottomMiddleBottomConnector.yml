@@ -1,0 +1,6 @@
+name: "Bottom Middle Bottom Connector"
+area: Kraid
+scroll: Horizontal
+position: [0x05, 0x1A]
+screens: [0x17, 0x18]
+sprites: []

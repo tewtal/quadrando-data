@@ -1,0 +1,6 @@
+name: "Top Green Hallway"
+area: Kraid
+scroll: Vertical
+position: [0x0A, 0x1B]
+screens: [0x21]
+sprites: []      

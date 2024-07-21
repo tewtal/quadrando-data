@@ -1,0 +1,34 @@
+name: "Left Morph Tunnels"
+area: Brinstar
+screen: 0x26
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+      
+      - name: "Top Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x0A
+
+      - name: "Middle Top Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x08
+
+      - name: "Bottom Left Tunnel"
+        type: Tunnel
+        direction: Left
+        height: 0x04
+
+edges:
+  undirected:
+      Morph:
+          - ["Right", "Top Left Tunnel"]
+      UseBombs:
+          - ["Top Left Tunnel", "Middle Top Left Tunnel"]
+  directed:
+      fixed:
+          - ["Bottom Left Tunnel", "Right"]

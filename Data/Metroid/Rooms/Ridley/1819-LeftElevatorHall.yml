@@ -1,0 +1,6 @@
+name: "Left Elevator Hall"
+area: Ridley
+scroll: Horizontal
+position: [0x18, 0x19]
+screens: [0x0E]
+sprites: []

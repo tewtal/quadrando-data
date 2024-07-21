@@ -1,0 +1,6 @@
+name: "Middle Blue Connector"
+area: Kraid
+scroll: Horizontal
+position: [0x09, 0x12]
+screens: [0x17, 0x18]
+sprites: []

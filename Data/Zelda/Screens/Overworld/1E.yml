@@ -1,0 +1,22 @@
+name: Screen 1E
+area: Overworld
+screen: 0x1E
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+
+    - name: "Top exit"
+      type: Scroll
+      direction: Up
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Top exit"]
+      - ["Open cave", "Left exit"]

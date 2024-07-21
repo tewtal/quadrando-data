@@ -1,0 +1,19 @@
+name: "Left Door Bottom Shaft"
+area: Ridley
+screen: 0x09
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Left door"]

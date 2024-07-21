@@ -1,0 +1,20 @@
+name: "Hidden Ripper Rio Tunnel"
+area: Brinstar
+screen: 0x22
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  directed:
+      fixed:
+          - ["Left", "Right"]
+      UseBombs:
+          - ["Right", "Left"]

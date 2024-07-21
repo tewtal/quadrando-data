@@ -1,0 +1,6 @@
+name: "Ridley Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x18, 0x15]
+screens: [0x08, 0x08, 0x06]
+sprites: []    

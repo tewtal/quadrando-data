@@ -1,0 +1,18 @@
+name: "Platforms Purple"
+area: Norfair
+screen: 0x1E
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]

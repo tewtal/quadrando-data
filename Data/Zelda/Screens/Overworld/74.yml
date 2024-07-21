@@ -1,0 +1,23 @@
+name: Screen 74
+area: Overworld
+screen: 0x74
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+  caves:
+    - name: "Push block cave"
+      type: Push
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]
+    PushBlocks:
+      - ["Push block cave", "Left exit"]

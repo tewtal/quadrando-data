@@ -1,0 +1,12 @@
+name: "Ridley Elevator Room"
+area: Norfair
+scroll: Horizontal
+position: [0x19, 0x16]
+screens: [0x05]
+sprites:
+    - name: "Norfair to Ridley Elevator"
+      screen: 0x00
+      location: "Elevator Platform"  
+      slot: 0x00    
+      type: Elevator
+      item: NorfairToRidley

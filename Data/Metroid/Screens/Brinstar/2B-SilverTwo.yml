@@ -1,0 +1,26 @@
+name: "Silver Two"
+area: Brinstar
+screen: 0x2B
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Red
+        direction: Right
+  
+  locations:
+      - name: "Morph Bridge"
+        type: Meta
+
+edges:
+  directed:
+      DefeatedSilverTwo:
+          - ["Right door", "Morph Bridge"]
+          - ["Left door", "Morph Bridge"]
+      Morph:
+          - ["Morph Bridge", "Right door"]
+          - ["Morph Bridge", "Left door"]

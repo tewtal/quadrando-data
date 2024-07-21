@@ -1,0 +1,12 @@
+name: "Top Left Connector"
+area: Norfair
+scroll: Horizontal
+position: [0x0E, 0x0E]
+screens: [0x1D, 0x1F, 0x06, 0x1F, 0x19, 0x1E, 0x1E, 0x1C]
+sprites:
+    - name: "Missile"
+      screen: 0x04
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

@@ -1,0 +1,32 @@
+name: "Hidden Fall Shaft"
+area: Ridley
+screen: 0x0D
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  exits:
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+  locations:
+      - name: "Left ledge"
+        type: Item
+        position: [0x04, 0x07]
+        
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right door"]
+          - ["Left door", "Left ledge"]
+  directed:
+      fixed:
+          - ["Left door", "Bottom"]

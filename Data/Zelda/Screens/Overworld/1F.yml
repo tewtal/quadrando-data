@@ -1,0 +1,23 @@
+name: Screen 1F
+area: Overworld
+screen: 0x1F
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Grave cave"
+      type: Grave
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Down exit"]
+    OpenGraves:
+      - ["Grave cave", "Right exit"]

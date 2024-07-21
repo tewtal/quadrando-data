@@ -1,0 +1,26 @@
+name: "Ripper Shaft"
+area: Kraid
+screen: 0x05
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+  locations:
+      - name: "Frozen Rippers"
+        type: Meta 
+
+edges:
+  directed:
+      fixed:
+          - ["Top", "Bottom"]
+      IceBeam:
+          - ["Bottom", "Frozen Rippers"]
+      HiJump:
+          - ["Frozen Rippers", "Top"]

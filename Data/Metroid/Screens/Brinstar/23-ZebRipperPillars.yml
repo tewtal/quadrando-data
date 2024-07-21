@@ -1,0 +1,22 @@
+name: "Zeb Ripper Pillars"
+area: Brinstar
+screen: 0x23
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      Morph:
+          - ["Left", "Right"]
+      IceBeam:
+          - ["Left", "Right"]
+      HiJump:
+          - ["Left", "Right"]

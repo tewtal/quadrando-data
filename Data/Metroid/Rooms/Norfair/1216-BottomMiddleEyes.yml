@@ -1,0 +1,19 @@
+name: "Bottom Middle Eyes"
+area: Norfair
+scroll: Horizontal
+position: [0x12, 0x16]
+screens: [0x12, 0x19, 0x19, 0x07]
+sprites:
+    - name: "Missile"
+      screen: 0x01
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile
+
+    - name: "Missile"
+      screen: 0x02
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile      

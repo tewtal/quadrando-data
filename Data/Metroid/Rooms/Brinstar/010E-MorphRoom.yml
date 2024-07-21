@@ -1,0 +1,12 @@
+name: "Morph Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x01, 0x0E]
+screens: [0x08, 0x17, 0x09, 0x14, 0x13]
+sprites:
+    - name: "Morph Ball"
+      screen: 0x01
+      location: "Morph Ball Pedestal"
+      slot: 0x00
+      type: Item
+      item: Morph

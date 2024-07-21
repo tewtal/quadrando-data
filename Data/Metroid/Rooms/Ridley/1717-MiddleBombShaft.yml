@@ -1,0 +1,6 @@
+name: "Middle Bomb Shaft"
+area: Ridley
+scroll: Vertical
+position: [0x17, 0x17]
+screens: [0x05, 0x29, 0x0E]
+sprites: []    

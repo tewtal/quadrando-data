@@ -1,0 +1,19 @@
+name: "Right Door"
+area: Brinstar
+screen: 0x2D
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Left"]

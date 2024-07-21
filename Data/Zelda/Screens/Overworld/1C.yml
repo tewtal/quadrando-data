@@ -1,0 +1,38 @@
+name: Screen 1C
+area: Overworld
+screen: 0x1C
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down left exit"
+      type: Scroll
+      direction: Down
+
+    - name: "Down right exit"
+      type: Scroll
+      direction: Down
+
+  caves:
+    - name: "Push block cave"
+      type: Push
+
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Down left exit"]
+      - ["Right exit", "Up exit"]
+      - ["Right exit", "Down right exit"]
+      - ["Up exit", "Down right exit"]
+    PushBlocks:
+      - ["Push block cave", "Left exit"]

@@ -1,0 +1,12 @@
+name: "Jump Missiles"
+area: Ridley
+scroll: Horizontal
+position: [0x17, 0x1B]
+screens: [0x23, 0x0F]
+sprites:
+    - name: "Missile"
+      screen: 0x01
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

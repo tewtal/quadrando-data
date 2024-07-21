@@ -1,0 +1,17 @@
+name: Screen 5A
+area: Overworld
+screen: 0x5A
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Open cave", "Left exit"]

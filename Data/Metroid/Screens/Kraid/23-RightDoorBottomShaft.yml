@@ -1,0 +1,19 @@
+name: "Right Door Bottom Shaft"
+area: Kraid
+screen: 0x23
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Top"]

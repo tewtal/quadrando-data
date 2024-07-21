@@ -1,0 +1,44 @@
+name: "Right Door Pillar Shaft"
+area: Ridley
+screen: 0x0A
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      # The reason we have two top exists here is because if we only had one we'd
+      # be linking the bottom and right door through the top inside the room, but
+      # that's not logically possible. The right door can only be accessed through
+      # the top if there's actually a room above us, and if there is both top exists
+      # will be linked to the entrance nodes above.
+
+      # This needs to be better detailed in logic for shuffling, such as the tile gaps
+      # for any given exit/entrance to properly line up screens.
+      - name: "Top Left"
+        type: Scroll
+        direction: Up
+
+      - name: "Top Right"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top Left", "Bottom"]
+          - ["Top Right", "Right door"]
+  directed:
+      UseBombs:
+          - ["Bottom", "Right door"]
+      IceBeam:
+          - ["Bottom", "Right door"]
+      HiJump:
+          - ["Bottom", "Right door"]
+

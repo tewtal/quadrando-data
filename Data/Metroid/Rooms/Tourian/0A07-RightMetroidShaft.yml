@@ -1,0 +1,6 @@
+name: "Right Metroid Shaft"
+area: Tourian
+scroll: Vertical
+position: [0x0A, 0x07]
+screens: [0x0D, 0x0C, 0x0C, 0x0C, 0x0A]
+sprites: []

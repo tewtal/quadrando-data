@@ -1,0 +1,26 @@
+name: Screen 6D
+area: Overworld
+screen: 0x6D
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right top exit"
+      type: Scroll
+      direction: Right
+
+    - name: "Right bottom exit"
+      type: Scroll
+      direction: Right
+
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right bottom exit"]
+      - ["Right top exit", "Up exit"]

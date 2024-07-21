@@ -1,0 +1,6 @@
+name: "Bottom Left Blue Hallway"
+area: Kraid
+scroll: Vertical
+position: [0x02, 0x1B]
+screens: [0x22]
+sprites: []      

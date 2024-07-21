@@ -1,0 +1,6 @@
+name: "Purple Dead End"
+area: Ridley
+scroll: Horizontal
+position: [0x19, 0x1B]
+screens: [0x28, 0x27, 0x27, 0x27, 0x19]
+sprites: []

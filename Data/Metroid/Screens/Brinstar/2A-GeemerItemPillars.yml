@@ -1,0 +1,24 @@
+name: "Geemer Item Pillars"
+area: Brinstar
+screen: 0x2A
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Pillar Item Orb"
+        type: Item
+        position: [0x08, 0x06]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Pillar Item Orb"]
+          - ["Right", "Pillar Item Orb"]

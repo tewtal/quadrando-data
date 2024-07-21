@@ -1,0 +1,24 @@
+name: "Elevator Entrance"
+area: Ridley
+screen: 0x02
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Elevator"
+        type: Elevator
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+  locations:
+      - name: "Elevator Platform"
+        type: Elevator
+        position: [0x07, 0x08]
+
+edges:
+  undirected:
+      fixed:
+          - ["Bottom", "Elevator Platform"]
+          - ["Elevator Platform", "Elevator"]

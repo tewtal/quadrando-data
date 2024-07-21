@@ -1,0 +1,6 @@
+name: "Ice Shaft"
+area: Brinstar
+scroll: Vertical
+position: [0x16, 0x06]
+screens: [0x08, 0x10, 0x06, 0x04, 0x08]
+sprites: []      

@@ -1,0 +1,84 @@
+name: Underworld Screen 16
+area: Underworld
+screen: 0x16
+nodes:
+  exits:
+    - name: "Left edge"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right edge"
+      type: Scroll
+      direction: Right
+      
+    - name: "Top edge"
+      type: Scroll
+      direction: Up
+      
+    - name: "Bottom edge"
+      type: Scroll
+      direction: Down
+
+  regions:
+    - name: "Middle island"
+      type: Region
+      from: [3, 2]
+      to: [8, 4]
+
+    - name: "Top platform"
+      type: Region
+      from: [5, 0]
+      to: [6, 0]
+
+    - name: "Bottom platform"
+      type: Region
+      from: [5, 6]
+      to: [6, 6]
+
+    - name: "Left side top"
+      type: Region
+      from: [1, 1]
+      to: [3, 1]
+
+    - name: "Left side"
+      type: Region
+      from: [0, 2]
+      to: [1, 4]
+
+    - name: "Left side bottom"
+      type: Region
+      from: [1, 5]
+      to: [3, 5]
+
+    - name: "Right side top"
+      type: Region
+      from: [8, 1]
+      to: [10, 1]
+
+    - name: "Right side"
+      type: Region
+      from: [10, 2]
+      to: [11, 4]
+
+    - name: "Right side bottom"
+      type: Region
+      from: [8, 5]
+      to: [10, 5]
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left edge", "Left side"]
+      - ["Left side", "Left side top"]
+      - ["Left side", "Left side bottom"]
+      - ["Right edge", "Right side"]
+      - ["Right side", "Right side top"]
+      - ["Right side", "Right side bottom"]
+      - ["Top edge", "Top platform"]
+      - ["Bottom edge", "Bottom platform"]
+
+    StepLadder:
+      - ["Top platform", "Middle island"]
+      - ["Bottom platform", "Middle island"]
+      - ["Left side", "Middle island"]
+      - ["Right side", "Middle island"]

@@ -1,0 +1,29 @@
+name: "Double Door Platform Shaft"
+area: Kraid
+screen: 0x03
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+          - ["Left door", "Bottom"]
+          - ["Right door", "Bottom"]

@@ -1,0 +1,6 @@
+name: "Construction Zone"
+area: Brinstar
+scroll: Vertical
+position: [0x06, 0x0E]
+screens: [0x18, 0x06, 0x06, 0x06, 0x03, 0x08]
+sprites: []      

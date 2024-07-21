@@ -1,0 +1,17 @@
+name: Screen 2E
+area: Overworld
+screen: 0x2E
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Open cave", "Down exit"]

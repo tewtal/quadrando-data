@@ -1,0 +1,18 @@
+name: "Platforms Purple"
+area: Ridley
+screen: 0x27
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]

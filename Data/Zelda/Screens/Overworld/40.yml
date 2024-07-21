@@ -1,0 +1,22 @@
+name: Screen 40
+area: Overworld
+screen: 0x40
+nodes:
+  exits:
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Open cave"
+      type: Open
+      
+edges:
+  undirected:
+    fixed:
+      - ["Up exit", "Down exit"]
+      - ["Open cave", "Up exit"]

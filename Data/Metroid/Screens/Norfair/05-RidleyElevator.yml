@@ -1,0 +1,25 @@
+name: "Ridley Elevator"
+area: Norfair
+screen: 0x05
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Elevator"
+        type: Elevator
+        direction: Down
+
+  locations:
+      - name: "Elevator Platform"
+        type: Elevator
+        position: [0x07, 0x08]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Elevator Platform"]
+          - ["Elevator Platform", "Elevator"]

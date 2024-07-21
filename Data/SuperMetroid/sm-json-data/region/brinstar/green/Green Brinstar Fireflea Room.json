@@ -1,0 +1,189 @@
+{
+  "$schema": "../../../schema/m3-room.schema.json",
+  "id": 49,
+  "name": "Green Brinstar Fireflea Room",
+  "area": "Brinstar",
+  "subarea": "Green",
+  "playable": true,
+  "roomAddress": "0x79C5E",
+  "roomEnvironments": [{"heated": false}],
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Left Door",
+      "nodeType": "door",
+      "nodeSubType": "blue",
+      "nodeAddress": "0x0018d7e",
+      "doorOrientation": "left",
+      "doorEnvironments": [{"physics": "air"}]
+    },
+    {
+      "id": 2,
+      "name": "Right Door",
+      "nodeType": "door",
+      "nodeSubType": "blue",
+      "nodeAddress": "0x0018d8a",
+      "doorOrientation": "right",
+      "doorEnvironments": [{"physics": "air"}]
+    }
+  ],
+  "enemies": [
+    {
+      "id": "e1",
+      "groupName": "Green Brinstar Firefleas",
+      "enemyName": "Fireflea",
+      "quantity": 5,
+      "homeNodes": [1]
+    }
+  ],
+  "links": [
+    {
+      "from": 1,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    },
+    {
+      "from": 2,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    }
+  ],
+  "strats": [
+    {
+      "link": [1, 1],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 7,
+          "openEnd": 1
+        }
+      },
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 1],
+      "name": "Leave Shinecharged (X-Mode)",
+      "requires": [
+        "canXMode",
+        "h_XModeThornHit",
+        "h_XModeThornHit",
+        "h_XModeThornHit",
+        "h_canShineChargeMaxRunway",
+        "canShinechargeMovement"
+      ],
+      "exitCondition": {
+        "leaveShinecharged": {
+          "framesRemaining": 50
+        }
+      },
+      "note": "Jump into the large patch of thorns from below.",
+      "devNote": "Three thorns hits are expected per attempt (with any additional leniency hits being multiplied by this amount)."
+    },
+    {
+      "link": [1, 1],
+      "name": "Fireflea Farm",
+      "requires": [
+        {"resetRoom": {
+          "nodes": [1, 2],
+          "mustStayPut": false
+        }},
+        {"refill": ["Energy", "PowerBomb"]}
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 1],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Base",
+      "requires": [],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 1],
+      "name": "Base",
+      "requires": [],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Middle Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 28]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 28]]
+        }
+      },
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Bottom Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 29]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 29]]
+        }
+      },
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 2],
+      "name": "Gain Flash Suit (Spikesuit)",
+      "requires": [
+        {"or": [
+          {"canShineCharge": {
+            "usedTiles": 16,
+            "openEnd": 0
+          }},
+          {"and": [
+            {"doorUnlockedAtNode": 2},
+            {"canShineCharge": {
+              "usedTiles": 17,
+              "openEnd": 0
+            }}
+          ]}
+        ]},
+        {"thornHits": 1},
+        "canSpikeSuit",
+        {"shinespark": {"frames": 5, "excessFrames": 5}}
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 2],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 17,
+          "openEnd": 1
+        }
+      },
+      "flashSuitChecked": true
+    }
+  ]
+}

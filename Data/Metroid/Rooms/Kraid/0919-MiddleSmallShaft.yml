@@ -1,0 +1,6 @@
+name: "Middle Small Shaft"
+area: Kraid
+scroll: Vertical
+position: [0x09, 0x19]
+screens: [0x0B, 0x0C, 0x06]
+sprites: []      

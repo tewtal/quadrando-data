@@ -1,0 +1,12 @@
+name: "Tourian Elevator Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x03, 0x02]
+screens: [0x2C]
+sprites:
+    - name: "Brinstar to Tourian Elevator"
+      screen: 0x00
+      location: "Elevator Platform"  
+      slot: 0x00    
+      type: Elevator
+      item: BrinstarToTourian

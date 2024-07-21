@@ -1,0 +1,24 @@
+name: "Double Door Bottom Shaft"
+area: Ridley
+screen: 0x03
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+        
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Top"]
+          - ["Right door", "Top"]

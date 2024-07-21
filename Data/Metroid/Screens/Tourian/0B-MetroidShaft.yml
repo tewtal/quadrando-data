@@ -1,0 +1,19 @@
+name: "Metroid Shaft"
+area: Tourian
+screen: 0x0B
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+

@@ -1,0 +1,32 @@
+name: Screen 16
+area: Overworld
+screen: 0x16
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+      - ["Right exit", "Down exit"]
+    StepLadder:
+      - ["Left exit", "Right exit"]
+      - ["Left exit", "Down exit"]
+      - ["Up exit", "Down exit"]
+      - ["Right exit", "Up exit"]
+

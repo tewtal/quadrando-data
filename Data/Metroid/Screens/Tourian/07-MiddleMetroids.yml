@@ -1,0 +1,19 @@
+name: "Middle Metroids"
+area: Tourian
+screen: 0x07
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]

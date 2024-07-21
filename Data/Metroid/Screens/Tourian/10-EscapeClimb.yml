@@ -1,0 +1,19 @@
+name: "Escape Climb"
+area: Tourian
+screen: 0x10
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+

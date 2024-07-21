@@ -1,0 +1,23 @@
+name: "Left Door Empty Shaft"
+area: Brinstar
+screen: 0x2E
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  directed:
+      fixed:
+          - ["Left door", "Bottom"]
+      HiJump:
+          - ["Bottom", "Left door"]
+      IceBeam:
+          - ["Bottom", "Left door"]

@@ -1,0 +1,23 @@
+name: Screen 37
+area: Overworld
+screen: 0x37
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]
+      - ["Left exit", "Down exit"]
+      - ["Up exit", "Down exit"]

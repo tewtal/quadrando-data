@@ -1,0 +1,17 @@
+name: Screen 4A
+area: Overworld
+screen: 0x4A
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Armos Knight", "Left exit"]

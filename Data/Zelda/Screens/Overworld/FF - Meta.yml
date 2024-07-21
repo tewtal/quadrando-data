@@ -1,0 +1,68 @@
+name: Meta
+area: Overworld
+screen: 0xFF
+nodes:     
+  meta:
+    - name: "Meta"
+      type: Meta  
+
+    - name: "Use Bombs"
+      type: Meta
+      item: UseBombs
+
+    - name: "Open Graves"
+      type: Meta
+      item: OpenGraves
+
+    - name: "Burn Trees"
+      type: Meta
+      item: BurnTrees
+
+    - name: "Use Sword"
+      type: Meta
+      item: UseSword
+
+    - name: "Push Blocks"
+      type: Meta
+      item: PushBlocks
+
+    - name: "Can Hurt Enemies"
+      type: Meta
+      item: CanHurtEnemies
+    
+    - name: "Can Defeat Gohma"
+      type: Meta
+      item: CanDefeatGohma
+
+    - name: "Can Defeat Digdogger"
+      type: Meta
+      item: CanDefeatDigdogger
+      
+edges:
+  directed:
+    Bombs:
+      - ["Meta", "Use Bombs"]
+    PowerBracelet:
+      - ["Meta", "Open Graves"]
+      - ["Meta", "Push Blocks"]    
+    BlueCandle:
+      - ["Meta", "Burn Trees"]
+    RedCandle:
+      - ["Meta", "Burn Trees"]
+      - ["Meta", "Can Hurt Enemies"]
+    SwordL1:
+      - ["Meta", "Use Sword"]
+    SwordL2:
+      - ["Meta", "Use Sword"]
+    SwordL3:
+      - ["Meta", "Use Sword"]
+    UseSword:
+      - ["Meta", "Can Hurt Enemies"]
+    Rod:
+      - ["Meta", "Can Hurt Enemies"]
+    Bow:
+      - ["Can Hurt Enemies", "Can Defeat Gohma"]
+    Recorder:
+      - ["Can Hurt Enemies", "Can Defeat Digdogger"]
+      
+          

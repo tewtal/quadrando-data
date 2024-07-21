@@ -1,0 +1,6 @@
+name: "Middle Bomb Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x12, 0x0F]
+screens: [0x06, 0x0B, 0x03, 0x03, 0x06]
+sprites: []    

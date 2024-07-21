@@ -1,0 +1,12 @@
+name: "Pre Norfair"
+area: Brinstar
+scroll: Horizontal
+position: [0x0E, 0x0B]
+screens: [0x12, 0x14, 0x15, 0x14, 0x07, 0x16, 0x15, 0x13]
+sprites:
+    - name: "Missile"
+      screen: 0x04
+      location: "Middle Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

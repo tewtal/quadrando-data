@@ -1,0 +1,23 @@
+name: Screen 4D
+area: Overworld
+screen: 0x4D
+nodes:
+  exits:
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Tree cave"
+      type: Tree
+      
+edges:
+  undirected:
+    fixed:
+      - ["Right exit", "Down exit"]
+    BurnTrees:
+      - ["Tree cave", "Right exit"]

@@ -1,0 +1,6 @@
+name: "Solid Wall"
+area: Brinstar
+screen: 0x08
+scroll: Horizontal
+nodes:
+edges:

@@ -1,0 +1,6 @@
+name: "Ceiling Spikes"
+area: Ridley
+scroll: Horizontal
+position: [0x1A, 0x19]
+screens: [0x23, 0x24, 0x24, 0x15]
+sprites: []

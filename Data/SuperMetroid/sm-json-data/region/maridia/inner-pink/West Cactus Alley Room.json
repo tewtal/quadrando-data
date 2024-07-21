@@ -1,0 +1,521 @@
+{
+  "$schema": "../../../schema/m3-room.schema.json",
+  "id": 195,
+  "name": "West Cactus Alley Room",
+  "area": "Maridia",
+  "subarea": "Inner",
+  "subsubarea": "Pink",
+  "playable": true,
+  "roomAddress": "0x7D9FE",
+  "roomEnvironments": [{"heated": false}],
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Bottom Left Door",
+      "nodeType": "door",
+      "nodeSubType": "blue",
+      "nodeAddress": "0x001a93c",
+      "doorOrientation": "left",
+      "doorEnvironments": [{"physics": "water"}]
+    },
+    {
+      "id": 2,
+      "name": "Top Right Door",
+      "nodeType": "door",
+      "nodeSubType": "blue",
+      "nodeAddress": "0x001a948",
+      "doorOrientation": "right",
+      "doorEnvironments": [{"physics": "air"}]
+    }
+  ],
+  "enemies": [
+    {
+      "id": "e1",
+      "groupName": "West Cactus Alley Top Cacatacs",
+      "enemyName": "Cacatac",
+      "quantity": 2,
+      "homeNodes": [2]
+    },
+    {
+      "id": "e2",
+      "groupName": "West Cactus Alley Bottom Cacatac",
+      "enemyName": "Cacatac",
+      "quantity": 1,
+      "homeNodes": [1]
+    },
+    {
+      "id": "e3",
+      "groupName": "West Cactus Alley Middle Cacatac",
+      "enemyName": "Cacatac",
+      "quantity": 1,
+      "betweenNodes": [1, 2]
+    }
+  ],
+  "links": [
+    {
+      "from": 1,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    },
+    {
+      "from": 2,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    }
+  ],
+  "strats": [
+    {
+      "link": [1, 1],
+      "name": "Leave with Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 3,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [1, 1],
+      "name": "Single Cacatac Farm",
+      "requires": [
+        {"resetRoom": {
+          "nodes": [1],
+          "mustStayPut": false
+        }},
+        {"refill": ["Super"]}
+      ]
+    },
+    {
+      "link": [1, 1],
+      "name": "Cacatac Farm",
+      "requires": [
+        "HiJump",
+        {"resetRoom": {
+          "nodes": [1],
+          "mustStayPut": false
+        }},
+        {"refill": ["Energy", "Super"]}
+      ]
+    },
+    {
+      "link": [1, 1],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Base",
+      "requires": [
+        "Gravity",
+        {"or": [
+          "h_canCrouchJumpDownGrab",
+          "canUseFrozenEnemies",
+          "canGravityJump",
+          "canWalljump",
+          "HiJump",
+          "canSpringBallJumpMidAir",
+          "h_canFly",
+          "canSpringBallBombJump"
+        ]}
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Gravity Damage Boost",
+      "requires": [
+        "Gravity",
+        "canHorizontalDamageBoost",
+        "canCameraManip",
+        {"enemyDamage": {
+          "enemy": "Cacatac",
+          "hits": 1,
+          "type": "spike"
+        }}
+      ],
+      "note": "Damage boost up to the higher ledge using a Cacatac spike. Spikes only exist on camera so follow a vertically fired spike up to the correct height."
+    },
+    {
+      "link": [1, 2],
+      "name": "Suitless HiJump plus Assist",
+      "requires": [
+        "canSuitlessMaridia",
+        "HiJump",
+        {"or": [
+          "canSpringBallJumpMidAir",
+          "canSpaceJumpWaterBounce",
+          "canUseFrozenEnemies"
+        ]}
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Suitless SpringBall Frozen Cacatac",
+      "requires": [
+        "canSuitlessMaridia",
+        "canUseFrozenEnemies",
+        "canTrickySpringBallJump",
+        "canCrouchJump"
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "X-Ray Climb",
+      "entranceCondition": {
+        "comeInWithDoorStuckSetup": {}
+      },
+      "requires": [
+        "canXRayClimb"
+      ],
+      "flashSuitChecked": true,
+      "note": "Climb up a little less than 1 screen."
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Jump, Bootless",
+      "entranceCondition": {
+        "comeInJumping": {
+          "speedBooster": false,
+          "minTiles": 4.4375
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canDisableEquipment"
+      ],
+      "note": [
+        "The lenient version requires a runway of at least 5 tiles (with no open end) in the adjacent room.",
+        "This is easier without Speed Booster and requires disabling HiJump."
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Tricky Cross Room Jump, Bootless",
+      "entranceCondition": {
+        "comeInJumping": {
+          "speedBooster": false,
+          "minTiles": 1.4375
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canMomentumConservingTurnaround",
+        "canTrickyJump",
+        "canDisableEquipment"
+      ],
+      "note": [
+        "Requires a runway of at least 2 tiles (with no open end) in the adjacent room.",
+        "This is typically easier without Speed Booster depending on the exact runway length and requires disabling HiJump."
+      ],
+      "devNote": "Although speedBooster false includes canDisableEquipment, the strat still includes it to indicate disabling HiJump."
+    },
+    {
+      "link": [1, 2],
+      "name": "West Cac Alley Tricky Dash Cross Room Jump",
+      "entranceCondition": {
+        "comeInJumping": {
+          "speedBooster": true,
+          "minTiles": 1
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canMomentumConservingTurnaround",
+        "canTrickyDashJump",
+        "canDisableEquipment"
+      ],
+      "note": [
+        "It is possible to jump to the top door using a runway of just one tile with Speed Booster and no HiJump.",
+        "Requires a last-frame jump and down press that is late but not immediately before the turnaround.",
+        "With a second-to-last-frame jump it is still possible but more precise."
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Space Jump",
+      "entranceCondition": {
+        "comeInSpaceJumping": {
+          "speedBooster": "any",
+          "minTiles": 5
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater"
+      ],
+      "note": "Gain speed from a remote runway in the previous room, and Space Jump through the bottom of the doorway."
+    },
+    {
+      "link": [1, 2],
+      "name": "Tricky Cross Room Space Jump",
+      "entranceCondition": {
+        "comeInSpaceJumping": {
+          "speedBooster": "any",
+          "minTiles": 2
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canMomentumConservingTurnaround",
+        "canTrickyJump"
+      ],
+      "note": "Gain speed from a remote runway in the previous room, and Space Jump through the bottom of the doorway."
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Spring Ball Bounce (Uncontrolled)",
+      "entranceCondition": {
+        "comeInWithSpringBallBounce": {
+          "remoteAndLandingMinTiles": [[2.5625, 1]],
+          "movementType": "uncontrolled"
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canTrickyJump"
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Spring Ball Bounce (Controlled)",
+      "entranceCondition": {
+        "comeInWithSpringBallBounce": {
+          "remoteAndLandingMinTiles": [[3.5625, 1]],
+          "movementType": "controlled"
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater"
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Tricky Spring Ball Bounce (Uncontrolled)",
+      "entranceCondition": {
+        "comeInWithSpringBallBounce": {
+          "remoteAndLandingMinTiles": [[1.5625, 1]],
+          "movementType": "uncontrolled"
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canTrickyJump",
+        "canMomentumConservingMorph"
+      ],
+      "note": "Unmorph just before hitting the overhang, to conserve momentum to make it on top."
+    },
+    {
+      "link": [1, 2],
+      "name": "Cross Room Tricky Spring Ball Bounce (Controlled)",
+      "entranceCondition": {
+        "comeInWithSpringBallBounce": {
+          "remoteAndLandingMinTiles": [[2.5625, 1]],
+          "movementType": "controlled"
+        }
+      },
+      "requires": [
+        "canCrossRoomJumpIntoWater",
+        "canMomentumConservingMorph"
+      ],
+      "note": "Unmorph just before hitting the overhang, to conserve momentum to make it on top."
+    },
+    {
+      "link": [1, 2],
+      "name": "Gravity Shinespark",
+      "entranceCondition": {
+        "comeInShinecharged": {
+          "framesRequired": 4
+        }
+      },
+      "requires": [
+        "Gravity",
+        {"shinespark": {"frames": 20, "excessFrames": 0}}
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Suitless Shinespark",
+      "entranceCondition": {
+        "comeInShinecharged": {
+          "framesRequired": 20
+        }
+      },
+      "requires": [
+        "canSuitlessMaridia",
+        {"shinespark": {"frames": 20, "excessFrames": 0}}
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Underwater Walljumps",
+      "requires": [
+        "canUnderwaterWalljump"
+      ],
+      "note": [
+        "It can be difficult to land on the ledge when the waterline is low.",
+        "It may be necessary to time the walljump attempts by watching the water level, or by stalling with additional walljumps as the water rises."
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Grapple Teleport",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[12, 12], [12, 13]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Carry Grapple Teleport (Top Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[12, 12]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[12, 12]]
+        }
+      }
+    },
+    {
+      "link": [1, 2],
+      "name": "Carry Grapple Teleport (Bottom Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[12, 13]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[12, 13]]
+        }
+      }
+    },
+    {
+      "link": [2, 1],
+      "name": "Base",
+      "requires": []
+    },
+    {
+      "link": [2, 1],
+      "name": "Grapple Teleport",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 18], [2, 19], [2, 28], [2, 29]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Top Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 18]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 18]]
+        }
+      }
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Upper Middle Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 19]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 19]]
+        }
+      }
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Lower Middle Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 28]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 28]]
+        }
+      }
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Bottom Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[2, 29]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[2, 29]]
+        }
+      }
+    },
+    {
+      "link": [2, 2],
+      "name": "Leave with Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 3,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [2, 2],
+      "name": "Cacatac Farm",
+      "requires": [
+        {"resetRoom": {
+          "nodes": [2],
+          "mustStayPut": false
+        }},
+        {"refill": ["Energy", "Super"]}
+      ]
+    },
+    {
+      "link": [2, 2],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    }
+  ]
+}

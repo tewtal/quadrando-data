@@ -1,0 +1,26 @@
+name: "Double Door Bottom Shaft"
+area: Kraid
+screen: 0x06
+scroll: Vertical
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+edges:
+  undirected:
+      fixed:
+          - ["Top", "Bottom"]
+          - ["Left door", "Bottom"]
+      CanIBJ:
+          - ["Right door", "Bottom"]

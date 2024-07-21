@@ -1,0 +1,29 @@
+name: "Kraid's Lair"
+area: Kraid
+screen: 0x1D
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Right door"
+        type: Red
+        direction: Right
+
+  locations:
+      - name: "Kraid's Platform"
+        type: Meta
+
+      - name: "Kraid"
+        type: Boss
+        item: KraidDefeated
+
+      - name: "Kraid's Energy Tank"
+        type: Item
+        position: [0x0E, 0x0B]
+
+edges:
+  undirected:
+      fixed:
+          - ["Right door", "Kraid's Platform"]          
+          - ["Kraid's Platform", "Kraid's Energy Tank"]
+      DefeatKraid:
+          - ["Kraid's Platform", "Kraid"]

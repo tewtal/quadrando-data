@@ -1,0 +1,6 @@
+name: "Left Lava"
+area: Brinstar
+scroll: Horizontal
+position: [0x0E, 0x07]
+screens: [0x0C, 0x0E, 0x0E, 0x0D]
+sprites: []

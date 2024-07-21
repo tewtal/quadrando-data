@@ -1,0 +1,34 @@
+name: Screen 13
+area: Overworld
+screen: 0x13
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Bomb cave"
+      type: Bomb
+      
+  meta:
+    - name: "Armos Knight"
+      type: Armos
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]
+      - ["Left exit", "Down exit"]
+      - ["Right exit", "Down exit"]
+      - ["Armos Knight", "Left exit"]
+    UseBombs:
+      - ["Bomb cave", "Left exit"]

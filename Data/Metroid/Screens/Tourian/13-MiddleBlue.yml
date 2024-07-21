@@ -1,0 +1,19 @@
+name: "Middle Blue"
+area: Tourian
+screen: 0x13
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]

@@ -1,0 +1,558 @@
+{
+  "$schema": "../../../schema/m3-room.schema.json",
+  "id": 82,
+  "name": "Baby Kraid Room",
+  "area": "Brinstar",
+  "subarea": "Kraid",
+  "playable": true,
+  "roomAddress": "0x7A521",
+  "roomEnvironments": [{"heated": false}],
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Left Door",
+      "nodeType": "door",
+      "nodeSubType": "gray",
+      "nodeAddress": "0x0019192",
+      "doorOrientation": "left",
+      "doorEnvironments": [{"physics": "air"}],
+      "locks": [
+        {
+          "name": "Baby Kraid Left Gray Lock (to Kihunters)",
+          "lockType": "killEnemies",
+          "unlockStrats": [
+            {
+              "name": "Base",
+              "notable": false,
+              "requires": [
+                {"obstaclesCleared": ["A"]}
+              ],
+              "note": "Enemies can be killed by going between nodes 1 and 2."
+            }
+          ],
+          "yields": ["f_ZebesAwake"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Right Door",
+      "nodeType": "door",
+      "nodeSubType": "gray",
+      "nodeAddress": "0x001919e",
+      "doorOrientation": "right",
+      "doorEnvironments": [{"physics": "air"}],
+      "locks": [
+        {
+          "name": "Baby Kraid Right Gray Lock (to Eye Room)",
+          "lockType": "killEnemies",
+          "unlockStrats": [
+            {
+              "name": "Base",
+              "notable": false,
+              "requires": [
+                {"obstaclesCleared": ["A"]}
+              ],
+              "note": "Enemies can be killed by going between nodes 1 and 2."
+            }
+          ],
+          "yields": ["f_ZebesAwake"]
+        }
+      ]
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "A",
+      "name": "Pirates & Mini Kraid",
+      "obstacleType": "enemies"
+    }
+  ],
+  "enemies": [
+    {
+      "id": "e1",
+      "groupName": "Baby Kraid Pirates",
+      "enemyName": "Green Space Pirate (standing)",
+      "quantity": 3,
+      "homeNodes": [1]
+    },
+    {
+      "id": "e2",
+      "groupName": "Mini-Kraid",
+      "enemyName": "Mini-Kraid",
+      "quantity": 1,
+      "homeNodes": [2]
+    }
+  ],
+  "links": [
+    {
+      "from": 1,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    },
+    {
+      "from": 2,
+      "to": [
+        {"id": 1},
+        {"id": 2}
+      ]
+    }
+  ],
+  "strats": [
+    {
+      "link": [1, 1],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 3,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [1, 1],
+      "name": "Leave Shinecharged",
+      "requires": [
+        "h_canShineChargeMaxRunway",
+        "canShinechargeMovement",
+        {"obstaclesCleared": ["A"]}
+      ],
+      "exitCondition": {
+        "leaveShinecharged": {
+          "framesRemaining": 140
+        }
+      },
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 1],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    },
+    {
+      "link": [1, 2],
+      "name": "Enemies Already Killed",
+      "requires": [
+        {"obstaclesCleared": ["A"]}
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "Kill the Enemies",
+      "requires": [
+        {"or": [
+          {"enemyKill": {
+            "enemies": [
+              [
+                "Green Space Pirate (standing)",
+                "Green Space Pirate (standing)",
+                "Green Space Pirate (standing)"
+              ]
+            ],
+            "excludedWeapons": ["Bombs"]
+          }},
+          {"and": [
+            {"enemyKill": {
+              "enemies": [
+                [
+                  "Green Space Pirate (standing)",
+                  "Green Space Pirate (standing)",
+                  "Green Space Pirate (standing)"
+                ]
+              ],
+              "explicitWeapons": ["Bombs"]
+            }},
+            {"or": [
+              "canCarefulJump",
+              {"enemyDamage": {
+                "enemy": "Mini-Kraid",
+                "type": "spike",
+                "hits": 3
+              }}
+            ]}
+          ]}
+        ]},
+        {"or": [
+          "canDodgeWhileShooting",
+          "ScrewAttack",
+          {"enemyDamage": {
+            "enemy": "Mini-Kraid",
+            "type": "spike",
+            "hits": 1
+          }}
+        ]},
+        {"or": [
+          {"enemyKill": {
+            "enemies": [["Mini-Kraid"]],
+            "excludedWeapons": [
+              "PowerBeam",
+              "Ice",
+              "Wave",
+              "Spazer",
+              "Bombs",
+              "Charge"
+            ]
+          }},
+          {"and": [
+            {"enemyKill": {
+              "enemies": [["Mini-Kraid"]]
+            }},
+            {"enemyDamage": {
+              "enemy": "Mini-Kraid",
+              "type": "spike",
+              "hits": 3
+            }}
+          ]}
+        ]}
+      ],
+      "clearsObstacles": ["A"],
+      "devNote": "Power Bombs only sometimes work on mini kraid for some reason."
+    },
+    {
+      "link": [1, 2],
+      "name": "Tank the Damage",
+      "requires": [
+        {"enemyDamage": {
+          "enemy": "Green Space Pirate (standing)",
+          "type": "contact",
+          "hits": 1
+        }},
+        {"enemyDamage": {
+          "enemy": "Mini-Kraid",
+          "type": "spike",
+          "hits": 1
+        }}
+      ],
+      "note": "Quickly run through to tank the Pirate (or its laser) and one of Mini-Kraid's spikes."
+    },
+    {
+      "link": [1, 2],
+      "name": "Speedbooster Dodge Kill",
+      "requires": [
+        "canCarefulJump",
+        {"getBlueSpeed": {
+          "usedTiles": 29,
+          "openEnd": 2
+        }}
+      ],
+      "clearsObstacles": ["A"],
+      "note": [
+        "Shoot the pirates to prevent their lasers, then jump over them to get to the runway.",
+        "Mini-Kraid spikes will block the runway fairly quickly; a shortcharge can allow for more run space but isn't required."
+      ],
+      "devNote": "You have to move somewhat quickly to not need a shortcharge."
+    },
+    {
+      "link": [1, 2],
+      "name": "Speedbooster Tank Kill",
+      "requires": [
+        "h_getBlueSpeedMaxRunway",
+        {"enemyDamage": {
+          "enemy": "Green Space Pirate (standing)",
+          "type": "contact",
+          "hits": 1
+        }}
+      ],
+      "clearsObstacles": ["A"]
+    },
+    {
+      "link": [1, 2],
+      "name": "Dodge",
+      "requires": [
+        "canCarefulJump",
+        {"enemyDamage": {
+          "enemy": "Mini-Kraid",
+          "type": "spike",
+          "hits": 1
+        }}
+      ],
+      "note": "Shoot the pirates to prevent their lasers, then jump over them. Tank one Mini-Kraid spike."
+    },
+    {
+      "link": [1, 2],
+      "name": "Space Jump",
+      "requires": [
+        "SpaceJump"
+      ]
+    },
+    {
+      "link": [1, 2],
+      "name": "G-Mode Morph Bomb or Power Bomb Kill",
+      "entranceCondition": {
+        "comeInWithGMode": {
+          "mode": "any",
+          "morphed": true
+        }
+      },
+      "requires": [
+        "h_canArtificialMorphBombThings"
+      ],
+      "flashSuitChecked": true,
+      "note": [
+        "Wait for the pirates to move as far right as possible in order to kill them all with a single Power Bomb.",
+        "Unmorph and kill Baby Kraid before exiting G-Mode. Run away, exit G-Mode, then jump over the spike projectiles."
+      ]
+    },
+    {
+      "link": [2, 1],
+      "name": "Enemies Already Killed",
+      "requires": [
+        {"obstaclesCleared": ["A"]}
+      ],
+      "devNote": "Power Bombs only sometimes work on mini kraid for some reason."
+    },
+    {
+      "link": [2, 1],
+      "name": "Kill the Enemies",
+      "requires": [
+        {"enemyKill": {
+          "enemies": [
+            [
+              "Green Space Pirate (standing)",
+              "Green Space Pirate (standing)",
+              "Green Space Pirate (standing)"
+            ]
+          ]
+        }},
+        {"or": [
+          {"enemyKill": {
+            "enemies": [["Mini-Kraid"]],
+            "excludedWeapons": [
+              "PowerBeam",
+              "Ice",
+              "Wave",
+              "Spazer",
+              "Bombs",
+              "Charge"
+            ]
+          }},
+          {"and": [
+            {"enemyKill": {
+              "enemies": [["Mini-Kraid"]]
+            }},
+            {"or": [
+              "canDodgeWhileShooting",
+              {"enemyDamage": {
+                "enemy": "Mini-Kraid",
+                "type": "stone",
+                "hits": 1
+              }}
+            ]}
+          ]}
+        ]}
+      ],
+      "clearsObstacles": ["A"]
+    },
+    {
+      "link": [2, 1],
+      "name": "Speed Kill",
+      "requires": [
+        "h_getBlueSpeedMaxRunway",
+        {"enemyDamage": {
+          "enemy": "Mini-Kraid",
+          "type": "spike",
+          "hits": 1
+        }}
+      ],
+      "clearsObstacles": ["A"],
+      "note": "Gain Iframes by taking damage then run left to create enough space to run back to the right with speedbooster."
+    },
+    {
+      "link": [2, 1],
+      "name": "Pacifist",
+      "requires": [
+        {"or": [
+          "canCarefulJump",
+          {"enemyDamage": {
+            "enemy": "Green Space Pirate (standing)",
+            "type": "contact",
+            "hits": 1
+          }}
+        ]},
+        {"or": [
+          "canTrickyJump",
+          {"enemyDamage": {
+            "enemy": "Mini-Kraid",
+            "type": "spike",
+            "hits": 1
+          }}
+        ]}
+      ],
+      "note": "Wait to hit one of Mini-Kraid's spikes, then run through."
+    },
+    {
+      "link": [2, 1],
+      "name": "G-Mode Morph Bomb Kill",
+      "entranceCondition": {
+        "comeInWithGMode": {
+          "mode": "any",
+          "morphed": true
+        }
+      },
+      "requires": [
+        "h_canArtificialMorphBombs",
+        {"or": [
+          {"and": [
+            "h_canArtificialMorphIBJ",
+            "h_canArtificialMorphBombHorizontally",
+            "canTrickyJump"
+          ]},
+          {"enemyDamage": {
+            "enemy": "Mini-Kraid",
+            "type": "spike",
+            "hits": 1
+          }}
+        ]}
+      ],
+      "clearsObstacles": ["A"],
+      "flashSuitChecked": true,
+      "note": [
+        "Kill all of the enemies with Bombs. Samus will take a Baby Kraid spike hit while rolling through the invisible projectiles.",
+        "It is not too difficult to IBJ and then bomb horizontally over the cluster of invisible spikes, but there is some risk because they are invisible.",
+        "They occupy a slightly smaller space than what Baby Kraid was occupying."
+      ]
+    },
+    {
+      "link": [2, 1],
+      "name": "G-Mode Morph Power Bomb Kill",
+      "entranceCondition": {
+        "comeInWithGMode": {
+          "mode": "any",
+          "morphed": true
+        }
+      },
+      "requires": [
+        {"enemyDamage": {
+          "enemy": "Mini-Kraid",
+          "type": "contact",
+          "hits": 1
+        }},
+        "h_canArtificialMorphPowerBomb"
+      ],
+      "clearsObstacles": ["A"],
+      "flashSuitChecked": true,
+      "note": [
+        "Wait on the right side of Baby Kraid for about 10 seconds so that he shoots the maximum amount of projectiles which will move to the right after exiting G-Mode.",
+        "Roll through him and kill the left pirates with a Power Bomb. Only one is necessary when placing next to the pirate when it is as far to the left as possible.",
+        "Unmorph, freely kill Baby Kraid, then exit G-Mode. The his projectiles should all shoot to the right."
+      ],
+      "devNote": "FIXME: It should be possible to use a second Power Bomb or Spring Ball to hit one of Kraids invisible projectiles to save Energy."
+    },
+    {
+      "link": [2, 1],
+      "name": "Grapple Teleport",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[3, 12], [3, 13]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Top Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[3, 12]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[3, 12]]
+        }
+      }
+    },
+    {
+      "link": [2, 1],
+      "name": "Carry Grapple Teleport (Bottom Position)",
+      "entranceCondition": {
+        "comeInWithGrappleTeleport": {
+          "blockPositions": [[3, 13]]
+        }
+      },
+      "requires": [],
+      "bypassesDoorShell": true,
+      "exitCondition": {
+        "leaveWithGrappleTeleport": {
+          "blockPositions": [[3, 13]]
+        }
+      }
+    },
+    {
+      "link": [2, 2],
+      "name": "Green Pirates and Mini-Kraid Farm",
+      "requires": [
+        {"resetRoom": {
+          "nodes": [1, 2],
+          "mustStayPut": false
+        }},
+        {"or": [
+          "ScrewAttack",
+          {"ammo": {"type": "Super", "count": 1}},
+          "Plasma",
+          {"and": [
+            {"or": [
+              "Ice",
+              "Wave",
+              "Spazer",
+              "h_getBlueSpeedMaxRunway"
+            ]},
+            {"or": [
+              "canCarefulJump",
+              {"enemyDamage": {
+                "enemy": "Mini-Kraid",
+                "type": "stone",
+                "hits": 1
+              }}
+            ]}
+          ]}
+        ]},
+        {"refill": ["Energy", "Missile", "Super"]}
+      ],
+      "devNote": "These two farms are combined, to allow an option of using using Supers farmed from Mini-Kraid to kill the Pirates."
+    },
+    {
+      "link": [2, 2],
+      "name": "Leave With Runway",
+      "requires": [],
+      "exitCondition": {
+        "leaveWithRunway": {
+          "length": 4,
+          "openEnd": 1
+        }
+      }
+    },
+    {
+      "link": [2, 2],
+      "name": "Leave Shinecharged",
+      "requires": [
+        "h_canShineChargeMaxRunway",
+        "canShinechargeMovement",
+        {"obstaclesCleared": ["A"]}
+      ],
+      "exitCondition": {
+        "leaveShinecharged": {
+          "framesRemaining": 135
+        }
+      },
+      "flashSuitChecked": true
+    },
+    {
+      "link": [2, 2],
+      "name": "Crystal Flash",
+      "requires": [
+        "h_canCrystalFlash"
+      ],
+      "flashSuitChecked": true
+    }
+  ]
+}

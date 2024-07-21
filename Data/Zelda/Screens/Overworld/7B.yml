@@ -1,0 +1,12 @@
+name: Screen 7B
+area: Overworld
+screen: 0x7B
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:

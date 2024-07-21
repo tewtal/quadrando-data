@@ -1,0 +1,17 @@
+name: Screen 78
+area: Overworld
+screen: 0x78
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]

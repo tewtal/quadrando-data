@@ -1,0 +1,17 @@
+name: Screen 28
+area: Overworld
+screen: 0x28
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Right exit"]

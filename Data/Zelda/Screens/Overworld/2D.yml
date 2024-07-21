@@ -1,0 +1,17 @@
+name: Screen 2D
+area: Overworld
+screen: 0x2D
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Down exit"]

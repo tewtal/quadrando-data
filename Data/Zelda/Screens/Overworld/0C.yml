@@ -1,0 +1,23 @@
+name: Screen 0C
+area: Overworld
+screen: 0x0C
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Bomb cave"
+      type: Bomb
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Down exit"]
+    UseBombs:
+      - ["Bomb cave", "Left exit"]

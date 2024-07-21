@@ -1,0 +1,12 @@
+name: "Top Purple"
+area: Ridley
+scroll: Horizontal
+position: [0x12, 0x18]
+screens: [0x0F, 0x18, 0x17, 0x18, 0x19]
+sprites:
+    - name: "Missile"
+      screen: 0x00
+      location: "Pillar"
+      slot: 0x00    
+      type: Item
+      item: Missile

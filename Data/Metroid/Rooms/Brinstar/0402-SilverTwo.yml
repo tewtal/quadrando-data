@@ -1,0 +1,6 @@
+name: "Silver Two Statue Room"
+area: Brinstar
+scroll: Horizontal
+position: [0x04, 0x02]
+screens: [0x2B]
+sprites: []      

@@ -1,0 +1,35 @@
+name: Screen 68
+area: Overworld
+screen: 0x68
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Right exit"
+      type: Scroll
+      direction: Right
+      
+    - name: "Up left exit"
+      type: Scroll
+      direction: Up
+
+    - name: "Up right exit"
+      type: Scroll
+      direction: Up
+
+  caves:
+    - name: "Tree cave"
+      type: Tree
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up left exit"]
+      - ["Right exit", "Up right exit"]
+    BurnTrees:
+      - ["Tree cave", "Left exit"]
+  directed:
+    BurnTrees:
+      - ["Right exit", "Tree cave"]

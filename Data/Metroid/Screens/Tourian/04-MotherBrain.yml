@@ -1,0 +1,32 @@
+name: "Mother Brain"
+area: Tourian
+screen: 0x04
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+  locations:
+      - name: "Mother Brain"
+        type: Boss
+        item: DefeatedMotherBrain
+
+      - name: "Mother Brain Platform"
+        type: Meta
+
+edges:
+  directed:
+      fixed:
+          - ["Mother Brain Platform", "Right"]
+          - ["Mother Brain", "Left door"]
+      Missile|20:
+          - ["Right", "Mother Brain Platform"]
+      DefeatMotherBrain:
+          - ["Mother Brain Platform", "Mother Brain"]

@@ -1,0 +1,24 @@
+name: "Missile Pillar"
+area: Norfair
+screen: 0x19
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+  
+  locations:
+      - name: "Pillar"
+        type: Item
+        position: [0x04, 0x03]
+
+edges:
+  undirected:
+      fixed:
+          - ["Left", "Right"]
+          - ["Left", "Pillar"]

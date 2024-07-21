@@ -1,0 +1,6 @@
+name: "Bottom Left Shaft"
+area: Norfair
+scroll: Vertical
+position: [0x0D, 0x11]
+screens: [0x08, 0x0A, 0x09, 0x0A, 0x06]
+sprites: []    

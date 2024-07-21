@@ -1,0 +1,19 @@
+name: "Top Right Corridor"
+area: Brinstar
+scroll: Horizontal
+position: [0x15, 0x03]
+screens: [0x1F, 0x21, 0x21, 0x07, 0x22, 0x1D, 0x1B, 0x21, 0x20]
+sprites:
+    - name: "Missile"
+      screen: 0x03
+      location: "Middle Pillar" 
+      slot: 0x00    
+      type: Item
+      item: Missile
+
+    - name: "Energy Tank"
+      screen: 0x06
+      location: "Energy Tank Pedestal"
+      slot: 0x00    
+      type: Item
+      item: EnergyTank

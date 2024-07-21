@@ -1,0 +1,19 @@
+name: "Left Door Wavers"
+area: Brinstar
+screen: 0x1F
+scroll: Horizontal
+nodes:
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+  exits:
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right"]

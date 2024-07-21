@@ -1,0 +1,12 @@
+name: Screen 79
+area: Overworld
+screen: 0x79
+nodes:
+  exits:
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+edges:
+  undirected:
+    fixed:

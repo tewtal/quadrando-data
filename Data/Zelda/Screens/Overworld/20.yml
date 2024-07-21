@@ -1,0 +1,23 @@
+name: Screen 20
+area: Overworld
+screen: 0x20
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Down exit"
+      type: Scroll
+      direction: Down
+      
+  caves:
+    - name: "Grave cave"
+      type: Grave
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Down exit"]
+    OpenGraves:
+      - ["Grave cave", "Left exit"]

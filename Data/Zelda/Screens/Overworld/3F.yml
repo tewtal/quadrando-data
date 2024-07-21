@@ -1,0 +1,17 @@
+name: Screen 3F
+area: Overworld
+screen: 0x3F
+nodes:
+  exits:
+    - name: "Left exit"
+      type: Scroll
+      direction: Left
+      
+    - name: "Up exit"
+      type: Scroll
+      direction: Up
+      
+edges:
+  undirected:
+    fixed:
+      - ["Left exit", "Up exit"]

@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+.vscode/*
+scripts/.idea/*
+
+__pycache__
+*.pyc
+resources/app/manifests/*.json
+
+search_*.png
+clean/
+roomPathways/
+testPathways/
+roomPathways-*.zip

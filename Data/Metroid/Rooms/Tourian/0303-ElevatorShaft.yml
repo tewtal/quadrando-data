@@ -1,0 +1,6 @@
+name: "Elevator Shaft"
+area: Tourian
+scroll: Vertical
+position: [0x03, 0x03]
+screens: [0x01, 0x0E, 0x0B, 0x0B, 0x0F]
+sprites: []

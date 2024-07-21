@@ -1,0 +1,20 @@
+name: "Ice Climber Shaft"
+area: Brinstar
+screen: 0x02
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Top"
+        type: Scroll
+        direction: Up
+
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+edges:
+  directed:
+      fixed:
+          - ["Top", "Bottom"]
+      IceBeam:
+          - ["Bottom", "Top"]

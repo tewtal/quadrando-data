@@ -1,0 +1,37 @@
+Maps from https://vgmaps.com/Atlas/SuperNES/index.htm#SuperMetroid
+
+Ceres (6)
+
+Brinstar (54)
+=============
+Blue        6
+Green      16
+Pink       10
+Red        12
+Kraid      10
+
+Crateria (34)
+=============
+West        8
+Central    15
+East       11
+
+Lower Norfair (23)
+==================
+West             5
+East            18
+
+Maridia (54)
+============
+Outer     12
+Inner     42
+
+Norfair (53)
+============
+Crocomire 11
+West      13
+East      29
+
+Tourian (19)
+
+Wrecked Ship (16)

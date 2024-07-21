@@ -1,0 +1,22 @@
+name: "High Pillar Orange"
+area: Norfair
+screen: 0x2C
+scroll: Horizontal
+nodes:
+  exits:
+      - name: "Left"
+        type: Scroll
+        direction: Left
+
+      - name: "Right"
+        type: Scroll
+        direction: Right
+
+edges:
+  directed:
+      fixed:
+          - ["Left", "Right"]
+      CanIBJ:
+          - ["Right", "Left"]
+      IceBeam:
+          - ["Right", "Left"]

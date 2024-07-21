@@ -1,0 +1,26 @@
+name: "Blue Bomb Block Shaft"
+area: Kraid
+screen: 0x1A
+scroll: Vertical
+nodes:
+  exits:
+      - name: "Bottom"
+        type: Scroll
+        direction: Down
+
+  doors:
+      - name: "Left door"
+        type: Blue
+        direction: Left
+
+      - name: "Right door"
+        type: Red
+        direction: Right
+        
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right door"]
+  directed:
+      UseBombs:
+          - ["Left door", "Bottom"]

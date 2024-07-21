@@ -1,0 +1,18 @@
+name: "Map 6F"
+area: Underworld
+map: 0x6F
+screen: 0x1E
+palettes: [0x02, 0x02]
+doors: [0x04, 0x01, 0x05, 0x01] # [north, south, west, east]
+passage: false
+passage_left: 0x00
+passage_right: 0x00
+enemies: 0x02
+enemy_id: 0x15
+enemy_mode: 0x00
+push_block: false
+dark_room: false
+boss_sfx: 0x00
+room_item: 0x16
+item_pos: 0x01
+behaviour: 0x00

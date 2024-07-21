@@ -1,0 +1,26 @@
+name: "Kraid Hallway"
+area: Kraid
+screen: 0x1B
+scroll: Vertical
+nodes:
+  exits:
+        - name: "Top"
+          type: Scroll
+          direction: Up
+
+  doors:
+      - name: "Left door"
+        type: Red
+        direction: Left
+
+      - name: "Right door"
+        type: Blue
+        direction: Right
+
+edges:
+  undirected:
+      fixed:
+          - ["Left door", "Right door"]
+  directed:
+      fixed:
+          - ["Top", "Left door"]

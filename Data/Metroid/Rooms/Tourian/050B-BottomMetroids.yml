@@ -1,0 +1,6 @@
+name: "Bottom Metroids"
+area: Tourian
+scroll: Horizontal
+position: [0x05, 0x0B]
+screens: [0x05, 0x06, 0x07, 0x08, 0x09]
+sprites: []
